@@ -85,7 +85,33 @@
         <p>تجهیزات مورد علاقه گیمرهای حرفه‌ای</p>
       </div>
 
-      <div class="product-grid" id="product-list"></div>
+      <div class="shop-tools">
+  <input
+    type="search"
+    id="search-input"
+    placeholder="جست‌وجوی محصول..."
+    oninput="filterProducts()"
+  >
+
+  <select id="category-filter" onchange="filterProducts()">
+    <option value="همه">همه محصولات</option>
+    <option value="ماوس">ماوس</option>
+    <option value="کیبورد">کیبورد</option>
+    <option value="هدست">هدست</option>
+    <option value="کنترلر">کنترلر</option>
+    <option value="مانیتور">مانیتور</option>
+    <option value="میکروفون">میکروفون</option>
+  </select>
+</div>
+
+<div class="product-grid" id="product-list"></div>
+
+<div id="cart-panel" class="cart-panel" style="display:none">
+  <h2>🛒 سبد خرید شما</h2>
+  <div id="cart-items"></div>
+  <div id="cart-total"></div>
+  <button onclick="closeCart()">ادامه خرید</button>
+</div>
     </section>
 
     <section class="promo">
