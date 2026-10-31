@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="NOVA GAMING - فروشگاه تخصصی تجهیزات گیمینگ">
+  <title>NOVA GAMING | تجهیزات حرفه‌ای گیمینگ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    ارسال رایگان برای سفارش‌های بالای ۵ میلیون تومان
+  </div>
+
+  <header class="header">
+    <a href="#" class="logo">NOVA<span> GAMING</span></a>
+
+    <nav class="nav">
+      <a href="#home">خانه</a>
+      <a href="#categories">دسته‌بندی</a>
+      <a href="#products">محصولات</a>
+      <a href="#about">درباره ما</a>
+    </nav>
+
+    <button class="cart" onclick="showCart()">
+      🛒 سبد خرید <b id="cart-count">۰</b>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">LEVEL UP YOUR GAME</span>
+        <h1>
+          قدرت واقعی<br>
+          <span>از اینجا شروع می‌شود</span>
+        </h1>
+        <p>
+          تجهیزات حرفه‌ای گیمینگ برای کسانی که
+          به کمتر از بهترین قانع نیستند.
+        </p>
+        <a href="#products" class="hero-btn">مشاهده محصولات ↙</a>
+        <div class="hero-stats">
+          <div><strong>100%</strong><small>تجربه گیمینگ</small></div>
+          <div><strong>PRO</strong><small>تجهیزات حرفه‌ای</small></div>
+          <div><strong>NOVA</strong><small>نسل جدید بازی</small></div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="hero-glow"></div>
+        <div class="hero-controller">🎮</div>
+        <span class="hero-orbit">NOVA GAMING</span>
+      </div>
+    </section>
+
+    <section class="categories" id="categories">
+      <div class="section-heading">
+        <span>EXPLORE THE GEAR</span>
+        <h2>دنیای تجهیزات گیمینگ</h2>
+      </div>
+
+      <div class="category-grid">
+        <a href="#products" class="category-card">
+          <span>🖱️</span><h3>ماوس گیمینگ</h3>
+        </a>
+        <a href="#products" class="category-card">
+          <span>⌨️</span><h3>کیبورد</h3>
+        </a>
+        <a href="#products" class="category-card">
+          <span>🎧</span><h3>هدست</h3>
+        </a>
+        <a href="#products" class="category-card">
+          <span>🎮</span><h3>کنترلر</h3>
+        </a>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="section-heading">
+        <span>OUR COLLECTION</span>
+        <h2>محصولات منتخب</h2>
+        <p>تجهیزات مورد علاقه گیمرهای حرفه‌ای</p>
+      </div>
+
+      <div class="product-grid" id="product-list"></div>
+    </section>
+
+    <section class="promo">
+      <span>READY TO WIN?</span>
+      <h2>بازی را به سطح بعدی ببر</h2>
+      <a href="#products" class="hero-btn">شروع خرید</a>
+    </section>
+
+    <section class="about" id="about">
+      <h2>NOVA GAMING</h2>
+      <p>اینجا دنیای تجهیزات حرفه‌ای گیمینگ است.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo">NOVA<span> GAMING</span></div>
+    <p>© 2026 NOVA GAMING - تمامی حقوق محفوظ است.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
