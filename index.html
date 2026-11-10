@@ -4,795 +4,560 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#08060d">
-<meta name="description" content="AMIROFFICIAL - رسانه مستقل، اخبار سیاسی، تحلیل و دیدگاه‌های امیر">
+<meta name="theme-color" content="#090510">
+<meta name="description" content="AMIROFFICIAL - Independent Media">
 <title>AMIROFFICIAL | Independent Media</title>
 
 <style>
 :root{
-  --bg:#08060d;
-  --panel:#110d19;
-  --purple:#9700ff;
-  --light:#c56cff;
-  --silver:#e5e3ec;
-  --muted:#aaa4b6;
-  --border:rgba(174,75,255,.45);
+  --bg:#090510;--panel:#150d20;--purple:#a020ff;
+  --light:#d28aff;--silver:#e8e3ee;--muted:#aaa0b5;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;
-  background:var(--bg);
-  color:white;
-  font-family:Tahoma,Arial,sans-serif;
-  line-height:1.9;
+  margin:0;background:var(--bg);color:#fff;
+  font-family:Tahoma,Arial,sans-serif;overflow-x:hidden;
 }
+button,input,textarea{font:inherit}
+button{cursor:pointer}
 a{color:inherit;text-decoration:none}
-button{font:inherit}
-.container{width:min(1450px,92%);margin:auto}
-
-/* TOP BAR */
-.topbar{
-  border-bottom:1px solid #6930a0;
-  background:#08060d;
-}
-.top-inner{
-  min-height:48px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-}
-.top-contact{display:flex;align-items:center;gap:25px;flex-wrap:wrap}
-.top-contact a{
-  color:#eee;
-  font-size:13px;
-  direction:ltr;
-}
-.top-contact a:hover{color:var(--light)}
-.top-icon{color:#bd56ff;font-size:23px;margin-left:8px}
-.language{display:flex;gap:7px}
-.language button{
-  border:1px solid #65418b;
-  background:#100b18;
-  color:white;
-  padding:5px 15px;
-  border-radius:20px;
-  cursor:pointer;
-}
-.language button.active{
-  background:linear-gradient(90deg,#7900db,#bd4dff);
-  border-color:#c67aff;
-}
-
-/* NAVIGATION */
-header{
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(8,6,13,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--border);
-}
-.nav{
-  min-height:82px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-weight:900;
-  font-size:clamp(19px,3vw,34px);
-  letter-spacing:1px;
-  white-space:nowrap;
-}
-.brand-mark{
-  font-size:43px;
-  color:#c28aff;
-  text-shadow:0 0 20px #9d28ff;
-}
-.brand-name{
-  background:linear-gradient(90deg,#fff,#aaa,#a52bff);
-  color:transparent;
-  background-clip:text;
-  -webkit-background-clip:text;
-}
-.brand small{
-  display:block;
-  font-size:9px;
-  letter-spacing:5px;
-  color:#c7c0d1;
-  text-align:center;
-  font-weight:400;
-}
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:25px;
-}
-.nav-links a{
-  color:#e8e2ee;
-  font-size:14px;
-  transition:.2s;
-}
-.nav-links a:hover{color:#c56cff}
-.nav-home{
-  padding:8px 20px;
-  border-radius:22px;
-  background:linear-gradient(110deg,#7500d5,#b13aff);
-  box-shadow:0 0 20px #8a00e955;
-}
-
-/* HERO */
-.hero{
-  min-height:440px;
-  position:relative;
-  overflow:hidden;
-  border-bottom:1px solid #9d36ed;
-  background:
-    radial-gradient(ellipse at 50% 50%,#341052 0%,transparent 52%),
-    linear-gradient(110deg,#090610,#100817 55%,#08060d);
-}
-.hero:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(90deg,transparent,#a43aff12,transparent),
-    repeating-linear-gradient(135deg,transparent 0 80px,#ffffff05 81px 82px);
+.container{width:min(1150px,92%);margin:auto}
+.glow{
+  position:fixed;width:250px;height:250px;border-radius:50%;
+  background:#9700ff25;filter:blur(100px);z-index:-1;
   pointer-events:none;
 }
+.glow.one{top:10%;left:-120px}
+.glow.two{bottom:5%;right:-120px}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(ellipse at 15% 20%,#6900a52b,transparent 40%),
+    radial-gradient(ellipse at 85% 70%,#8a00ff24,transparent 40%),
+    repeating-linear-gradient(135deg,transparent 0 85px,#ffffff04 86px 87px);
+}
+
+/* نوار بالا */
+.topbar{border-bottom:1px solid #7737a455;background:#090510}
+.top-inner{
+  min-height:42px;display:flex;align-items:center;
+  justify-content:space-between;gap:10px;flex-wrap:wrap;
+}
+.top-links{display:flex;gap:20px;flex-wrap:wrap}
+.top-links a{font-size:12px;color:#ddd;direction:ltr}
+.top-links a:hover{color:var(--light)}
+.langs{display:flex;gap:6px}
+.langs button{
+  background:#1b1025;color:white;border:1px solid #75429a;
+  border-radius:20px;padding:6px 14px;font-size:11px;
+}
+.langs button.active{
+  background:linear-gradient(90deg,#7800d9,#bd3cff);
+}
+
+/* هدر و منو */
+header{
+  position:sticky;top:0;z-index:30;
+  background:#0b0713ed;backdrop-filter:blur(15px);
+  border-bottom:1px solid #7737a455;
+}
+.nav{
+  min-height:82px;display:flex;align-items:center;
+  justify-content:space-between;gap:15px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px}
+.crown{
+  font-size:43px;color:#c77aff;
+  text-shadow:0 0 25px #a000ff;
+}
+.brand-name{
+  font-family:Georgia,serif;font-style:italic;
+  font-size:clamp(20px,3vw,31px);letter-spacing:1px;
+  background:linear-gradient(90deg,#fff,#aaa0b7,#c04aff);
+  color:transparent;background-clip:text;
+}
+.brand small{
+  display:block;text-align:center;letter-spacing:4px;
+  color:#c2b7d0;font-size:9px;
+}
+.navlinks{display:flex;align-items:center;gap:6px}
+.navlinks button{
+  color:#ddd;background:transparent;border:0;
+  padding:10px 13px;border-radius:25px;font-size:13px;
+}
+.navlinks button:hover,.navlinks button.active{
+  background:linear-gradient(100deg,#7500d5,#ae28f5);
+  color:white;box-shadow:0 0 18px #9500ff55;
+}
+.navlinks .admin-open{border:1px solid #8f44bd}
+.menu-toggle{
+  display:none;background:#1c1028;color:white;
+  border:1px solid #8e44c0;border-radius:10px;
+  width:42px;height:42px;font-size:22px;
+}
+
+/* بخش اصلی */
+.hero{
+  padding:65px 0 75px;min-height:550px;
+  display:flex;align-items:center;
+}
 .hero-grid{
-  position:relative;
-  z-index:1;
-  display:grid;
-  grid-template-columns:1fr 1.2fr 1fr;
-  align-items:center;
-  gap:20px;
-  min-height:440px;
-  padding:35px 0;
+  display:grid;grid-template-columns:1.2fr .8fr;
+  gap:35px;align-items:center;
 }
-.hero-copy{text-align:center}
-.eyebrow{
-  color:#d7a2ff;
-  font-size:15px;
-  font-weight:bold;
-}
+.hero-copy{text-align:right}
+.kicker{font-size:13px;color:#d19aff;letter-spacing:2px}
 .hero h1{
-  font-size:clamp(38px,6vw,78px);
-  line-height:1.2;
-  margin:15px 0;
-  letter-spacing:1px;
+  font-family:Georgia,serif;font-style:italic;
+  font-size:clamp(44px,8vw,88px);
+  margin:17px 0;line-height:1.15;
 }
 .hero h1 span{
-  background:linear-gradient(90deg,#fff,#c6a5ed,#a300ff);
-  color:transparent;
-  background-clip:text;
-  -webkit-background-clip:text;
+  background:linear-gradient(90deg,#fff,#b8a7c9,#b93dff);
+  color:transparent;background-clip:text;
 }
 .hero-line{
-  width:85%;
-  height:4px;
-  margin:10px auto 22px;
-  background:linear-gradient(90deg,transparent,#a300ff,#fff,#a300ff,transparent);
-  box-shadow:0 0 15px #a300ff;
+  width:90%;height:4px;margin:20px 0;
+  background:linear-gradient(90deg,transparent,#a020ff,#fff,#a020ff);
+  box-shadow:0 0 20px #a020ff;
 }
-.hero-copy p{color:#e1dce8;font-size:15px}
-.hero-buttons{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:25px;
-}
+.hero p{color:#d0c7d9;line-height:2.2;font-size:16px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
 .btn{
-  display:inline-block;
-  border:1px solid #b33aff;
-  border-radius:25px;
-  padding:9px 22px;
+  border:1px solid #ae4bf3;border-radius:30px;
+  padding:12px 23px;color:white;background:transparent;
   transition:.25s;
 }
 .btn.primary{
-  background:linear-gradient(100deg,#8000db,#b22cff);
-  box-shadow:0 0 20px #9d00ff55;
+  background:linear-gradient(100deg,#8100e8,#c02aff);
+  box-shadow:0 0 22px #9500ff55;
 }
-.btn:hover{transform:translateY(-4px);box-shadow:0 0 24px #a300ff77}
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 25px #a020ff88;
+}
+.hero-art{display:grid;place-items:center;min-height:320px}
+.orbit{
+  width:min(300px,70vw);aspect-ratio:1;border-radius:50%;
+  border:1px solid #b35aff99;position:relative;
+  background:radial-gradient(circle at 35% 35%,#8135ad66,transparent 35%),#10091a;
+  box-shadow:0 0 55px #8b00ff55,inset 0 0 45px #9e00ff33;
+  animation:float 6s ease-in-out infinite;
+}
+.orbit:before,.orbit:after{
+  content:"";position:absolute;inset:12%;
+  border:1px solid #bd6aff88;border-radius:50%;
+  transform:rotateX(65deg) rotate(-30deg);
+}
+.orbit:after{transform:rotateX(65deg) rotate(45deg)}
+.orbit-center{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-family:Georgia,serif;font-style:italic;
+  font-size:42px;color:#e4c5ff;text-shadow:0 0 25px #a000ff;
+}
+.orbit-label{
+  position:absolute;bottom:25px;width:100%;
+  text-align:center;letter-spacing:3px;
+  font-size:9px;color:#c69be7;
+}
+@keyframes float{50%{transform:translateY(-13px)}}
 
-/* GLOBE */
-.globe-wrap{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+/* بخش‌ها */
+section.content-section{padding:65px 0}
+.section-title{text-align:center;margin-bottom:30px}
+.section-title small{color:#c17aff;letter-spacing:3px}
+.section-title h2{font-size:29px;margin:8px 0}
+.section-title p{font-size:13px;color:var(--muted)}
+.panel{
+  background:linear-gradient(140deg,#1b1028,#0c0812);
+  border:1px solid #7133a077;border-radius:22px;
+  padding:30px;box-shadow:0 15px 55px #0005;
 }
-.globe{
-  width:min(260px,100%);
-  aspect-ratio:1;
-  border-radius:50%;
-  position:relative;
-  background:
-    radial-gradient(circle at 35% 30%,#a56cff 0%,#57228b 23%,#1c1236 58%,#080610 75%);
-  box-shadow:0 0 35px #8f27ff88,inset -25px -10px 40px #000;
-  border:1px solid #9d57e9;
-  overflow:hidden;
+.about{text-align:center;max-width:850px;margin:auto}
+.about p{color:#c9c0d1;line-height:2.3}
+.about-crown{
+  font-size:48px;color:#c77aff;
+  text-shadow:0 0 25px #a000ff;
 }
-.globe:before{
-  content:"";
-  position:absolute;
-  inset:8%;
-  border-radius:50%;
-  background:
-    radial-gradient(ellipse at 35% 30%,transparent 20%,#a76bff33 21% 22%,transparent 23%),
-    repeating-linear-gradient(90deg,transparent 0 25px,#c28cff44 26px 27px),
-    repeating-linear-gradient(0deg,transparent 0 25px,#c28cff33 26px 27px);
-  transform:rotate(-20deg);
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:12px;margin-top:25px;
 }
-.globe:after{
-  content:"";
-  position:absolute;
-  width:150%;
-  height:45%;
-  border:2px solid #d29cff;
-  border-radius:50%;
-  left:-25%;
-  top:28%;
-  transform:rotate(-30deg);
-  box-shadow:0 0 15px #a500ff;
+.stat{
+  border:1px solid #7133a077;border-radius:14px;
+  padding:15px;background:#ffffff06;
 }
-.globe-label{
-  position:absolute;
-  z-index:2;
-  bottom:18px;
-  width:100%;
-  text-align:center;
-  color:#e4c8ff;
-  font-size:11px;
-  letter-spacing:3px;
-}
+.stat strong{display:block;color:#d08aff;font-size:22px}
+.stat span{font-size:11px;color:#aaa}
 
-/* HISTORICAL FLAG */
-.flag-area{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  gap:12px;
+/* اسلایدر مطالب */
+.article-window{overflow:hidden}
+.article-track{
+  display:flex;direction:rtl;gap:16px;
+  transition:transform .4s ease;
 }
-.flag-frame{
-  width:min(270px,100%);
-  padding:8px;
-  border:1px solid #a94aff;
-  border-radius:12px;
-  background:#120b1c;
-  box-shadow:0 0 25px #9900ff55;
-  transform:rotate(-2deg);
+.article{
+  flex:0 0 calc((100% - 32px)/3);
+  min-height:255px;padding:22px;
+  border:1px solid #7133a077;border-radius:18px;
+  background:linear-gradient(145deg,#1b1127,#0d0914);
+  transition:.25s;
 }
-.flag{
-  display:block;
-  width:100%;
-  border-radius:4px;
+.article:hover{
+  transform:translateY(-5px);border-color:#c36cff;
+  box-shadow:0 10px 35px #9d00ff22;
 }
-.flag-caption{
-  font-size:11px;
-  color:#c7a5e9;
-  text-align:center;
+.article-icon{
+  width:60px;height:60px;display:grid;place-items:center;
+  font-size:32px;border-radius:16px;color:#d19aff;
+  background:#9e28ff18;border:1px solid #9e28ff66;
+  margin-bottom:14px;
 }
+.article-tag{font-size:11px;color:#d29cff}
+.article h3{font-size:17px;margin:8px 0}
+.article p{font-size:13px;color:#bdb4c7;line-height:2}
+.article small{color:#8f819e;font-size:10px}
+.article-controls{
+  display:flex;justify-content:center;align-items:center;
+  gap:14px;margin-top:25px;
+}
+.circle-btn{
+  width:42px;height:42px;border-radius:50%;
+  background:#190e25;color:white;border:1px solid #a64be4;
+  font-size:20px;
+}
+.circle-btn:hover{background:#8900dd}
+.dots{display:flex;gap:7px}
+.dot{
+  width:8px;height:8px;border-radius:10px;
+  background:#574267;border:0;padding:0;
+}
+.dot.active{width:24px;background:#bc5aff}
 
-/* SECTION */
-section{padding:55px 0}
-.section-heading{
-  text-align:center;
-  margin-bottom:30px;
-}
-.section-heading h2{
-  display:inline-block;
-  font-size:27px;
-  margin:0;
-  padding:0 25px;
-  position:relative;
-}
-.section-heading h2:before,
-.section-heading h2:after{
-  content:"";
-  position:absolute;
-  top:50%;
-  width:80px;
-  height:2px;
-  background:linear-gradient(90deg,transparent,#a100ff);
-}
-.section-heading h2:before{right:100%}
-.section-heading h2:after{
-  left:100%;
-  transform:rotate(180deg);
-}
-
-/* CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-.card{
-  min-height:190px;
-  display:flex;
-  align-items:center;
-  gap:16px;
-  padding:17px;
-  border:1px solid var(--border);
-  border-radius:17px;
-  background:linear-gradient(135deg,#181021,#0d0a13);
-  transition:.3s;
-  overflow:hidden;
-}
-.card:hover{
-  transform:translateY(-6px);
-  border-color:#c16aff;
-  box-shadow:0 10px 30px #8300c933;
-}
-.card-art{
-  flex:0 0 42%;
-  min-height:145px;
-  border-radius:10px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:58px;
-  color:#d7b3ff;
-  background:
-    radial-gradient(circle at 50% 40%,#7b37a7,#26143b 55%,#090610);
-  border:1px solid #673a89;
-}
-.card:nth-child(2) .card-art{
-  background:radial-gradient(circle,#77708e,#20192d 65%,#090610);
-}
-.card:nth-child(3) .card-art{
-  background:radial-gradient(circle,#4c3b6c,#191021 65%,#090610);
-}
-.card-content{flex:1}
-.card-tag{
-  color:#d29bff;
-  font-size:11px;
-  background:#4b1474;
-  padding:4px 12px;
-  border-radius:20px;
-}
-.card h3{font-size:17px;margin:12px 0 5px}
-.card p{font-size:12px;color:#bdb5c8;margin:0 0 10px}
-.card-link{font-size:12px;color:#c16aff}
-
-/* ABOUT */
-.about{
-  border-block:1px solid var(--border);
-  background:
-    radial-gradient(ellipse at 20% 50%,#29113d,transparent 50%),
-    #0d0913;
-}
-.about-content{
-  max-width:850px;
-  margin:auto;
-  text-align:center;
-}
-.about-content p{color:#c9c1d0}
-
-/* CONTACT */
+/* ارتباط */
 .contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  align-items:center;
+  display:grid;grid-template-columns:1fr 1fr;gap:18px;
 }
-.contact-box{
-  padding:25px;
-  background:linear-gradient(130deg,#191022,#0d0913);
-  border:1px solid var(--border);
-  border-radius:18px;
+.contact-card{
+  padding:24px;border:1px solid #7133a077;
+  border-radius:18px;background:linear-gradient(130deg,#1a1025,#0c0812);
 }
-.contact-box h3{margin-top:0}
+.contact-card p{color:#bdb4c7;font-size:13px;line-height:2}
 .contact-link{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:12px;
-  margin:10px 0;
-  border:1px solid #54316c;
-  border-radius:12px;
-  color:#e7d9f6;
-  direction:ltr;
-  justify-content:flex-end;
-  overflow-wrap:anywhere;
+  display:flex;align-items:center;gap:12px;
+  direction:ltr;padding:12px;margin-top:12px;
+  border:1px solid #59336e;border-radius:12px;
+  color:#e8d6f8;overflow-wrap:anywhere;
 }
-.contact-link span{color:#c16aff;font-size:22px}
-.contact-link:hover{border-color:#c16aff;color:#d9aaff}
-.socials{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:20px;
-}
+.contact-link span{font-size:22px;color:#c36aff}
+.socials{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
 .socials a{
-  border:1px solid #8050a5;
-  border-radius:50px;
-  padding:8px 17px;
-  color:#d8b9f5;
-  font-size:13px;
+  padding:9px 14px;border:1px solid #75449a;
+  border-radius:25px;font-size:12px;color:#d5b4f0;
 }
-.socials a:hover{background:#6d16a1}
 
-/* FOOTER */
+/* فوتر */
 footer{
-  border-top:1px solid #8735c1;
-  padding:22px 0;
-  background:#07050b;
-  color:#aaa1b2;
-  font-size:12px;
+  border-top:1px solid #7133a077;background:#07040b;
+  padding:23px 0;color:#9c92a7;font-size:11px;
 }
 .footer-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  flex-wrap:wrap;
+  display:flex;justify-content:space-between;
+  gap:15px;flex-wrap:wrap;align-items:center;
 }
-.footer-slogan{
-  color:#d9b9ff;
-  letter-spacing:4px;
-  direction:ltr;
+.slogan{letter-spacing:4px;direction:ltr;color:#d7b2ff}
+
+/* پنل مدیریت */
+.admin-modal{
+  display:none;position:fixed;inset:0;z-index:100;
+  background:#05020bd9;backdrop-filter:blur(12px);
+  padding:15px;overflow:auto;
 }
+.admin-modal.show{display:block}
+.admin-box{
+  width:min(650px,100%);margin:30px auto;
+  background:#120b1d;border:1px solid #a44ce0;
+  border-radius:20px;padding:24px;
+  box-shadow:0 0 50px #8b00ff44;
+}
+.admin-head{
+  display:flex;justify-content:space-between;align-items:center;
+}
+.close-admin{
+  background:#321344;border:1px solid #a44ce0;
+  color:white;border-radius:50%;width:36px;height:36px;
+}
+.admin-box label{
+  display:block;margin:14px 0 6px;
+  color:#d9b4f4;font-size:13px;
+}
+.admin-box input,.admin-box textarea{
+  width:100%;padding:12px;border-radius:10px;
+  border:1px solid #65417e;background:#090610;
+  color:white;outline:none;
+}
+.admin-box textarea{min-height:100px;resize:vertical}
+.admin-action{
+  background:linear-gradient(90deg,#7900d3,#b32aff);
+  color:white;border:0;border-radius:10px;
+  padding:12px 18px;margin-top:15px;
+}
+.admin-note{font-size:11px;color:#a99ab5;line-height:2}
+.admin-item{
+  padding:12px;margin:8px 0;border:1px solid #54336c;
+  border-radius:10px;display:flex;
+  justify-content:space-between;gap:12px;align-items:center;
+}
+.delete-btn{
+  background:#701b39;border:0;color:white;
+  border-radius:8px;padding:7px 10px;
+}
+#adminEditor{display:none}
+#adminMessage{color:#d6a3ff;font-size:12px}
 
-/* ENGLISH */
-body.english{font-family:Arial,sans-serif}
-body.english .hero-copy,
-body.english .about-content,
-body.english .contact-box{text-align:left}
-body.english .card-content{text-align:left}
-body.english .contact-link{justify-content:flex-start}
-body.english .section-heading{text-align:center}
-
-/* MOBILE */
+/* تبلت */
 @media(max-width:850px){
-  .nav{flex-wrap:wrap;padding:12px 0}
-  .nav-links{gap:13px;flex-wrap:wrap;justify-content:center}
-  .hero-grid{grid-template-columns:1fr 1fr}
-  .hero-copy{grid-column:1/-1;grid-row:1}
-  .globe,.flag-frame{width:190px}
-  .cards{grid-template-columns:1fr}
-  .card{min-height:160px}
-}
-@media(max-width:520px){
-  .top-inner{padding:8px 0;flex-direction:column}
-  .top-contact{justify-content:center;gap:10px}
-  .top-contact a{font-size:11px}
-  .nav{justify-content:center}
-  .brand{width:100%;justify-content:center}
-  .nav-links{width:100%;gap:12px}
-  .nav-links a{font-size:12px}
   .hero-grid{grid-template-columns:1fr}
-  .hero-copy{grid-column:auto}
-  .globe-wrap{order:2}
-  .flag-area{order:3}
-  .hero h1{font-size:43px}
-  .globe,.flag-frame{width:210px}
+  .hero-copy{text-align:center}
+  .hero-line{margin:18px auto}
+  .hero p{max-width:650px;margin:auto}
+  .hero-art{min-height:260px}
+  .article{flex-basis:calc((100% - 16px)/2)}
+}
+
+/* موبایل */
+@media(max-width:600px){
+  .container{width:91%}
+  .top-inner{justify-content:center;padding:8px 0}
+  .top-links{justify-content:center;gap:12px}
+  .top-links a{font-size:10px}
+  .nav{min-height:70px}
+  .brand-name{font-size:22px}
+  .crown{font-size:34px}
+  .menu-toggle{display:block}
+  .navlinks{
+    display:none;width:100%;flex-direction:column;
+    align-items:stretch;padding:8px 0 15px;
+  }
+  .navlinks.open{display:flex}
+  .navlinks button{width:100%;text-align:center}
+  .hero{padding:42px 0 55px;min-height:auto}
+  .hero h1{font-size:clamp(39px,11vw,53px)}
+  .hero p{font-size:13px;line-height:2.2}
+  .hero-art{min-height:230px}
+  .orbit{width:205px}
+  .orbit-center{font-size:34px}
+  .actions{justify-content:center}
+  .btn{padding:11px 17px;font-size:12px}
+  section.content-section{padding:45px 0}
+  .section-title h2{font-size:24px}
+  .panel{padding:20px}
+  .stats{grid-template-columns:1fr}
+  .article{flex-basis:100%;min-height:220px}
   .contact-grid{grid-template-columns:1fr}
-  .card{gap:10px;padding:12px}
-  .card-art{flex-basis:36%;min-height:125px;font-size:43px}
-  .section-heading h2{font-size:22px}
-  .section-heading h2:before,
-  .section-heading h2:after{width:25px}
   .footer-inner{justify-content:center;text-align:center}
+  .slogan{font-size:10px}
+  .admin-box{padding:18px;margin:15px auto}
 }
 </style>
 </head>
 
 <body>
+<div class="glow one"></div>
+<div class="glow two"></div>
 
-<!-- TOP BAR -->
 <div class="topbar">
   <div class="container top-inner">
-    <div class="top-contact">
-      <a href="https://www.instagram.com/amirshz021/" target="_blank" rel="noopener">
-        <span class="top-icon">◎</span> amirshz021
-      </a>
-      <a href="mailto:phantom11780@gmail.com">
-        <span class="top-icon">✉</span> phantom11780@gmail.com
-      </a>
+    <div class="top-links">
+      <a href="https://instagram.com/amirshz021" target="_blank" rel="noopener">◎ amirshz021</a>
+      <a href="mailto:phantom11780@gmail.com">✉ phantom11780@gmail.com</a>
     </div>
-    <div class="language">
-      <button id="faBtn" class="active" onclick="setLanguage('fa')">FA 🇮🇷</button>
-      <button id="enBtn" onclick="setLanguage('en')">EN 🇬🇧</button>
+    <div class="langs">
+      <button id="faBtn" class="active" onclick="setLang('fa')">FA</button>
+      <button id="enBtn" onclick="setLang('en')">EN</button>
     </div>
   </div>
 </div>
 
-<!-- HEADER -->
 <header>
   <div class="container nav">
     <a class="brand" href="#home">
-      <span class="brand-mark">♛</span>
+      <span class="crown">♛</span>
       <span>
         <span class="brand-name">AMIROFFICIAL</span>
         <small>INDEPENDENT MEDIA</small>
       </span>
     </a>
-
-    <nav class="nav-links">
-      <a href="#home" data-fa="⌂ خانه" data-en="⌂ Home">⌂ خانه</a>
-      <a href="#about" data-fa="♙ درباره من" data-en="♙ About">♙ درباره من</a>
-      <a href="#news" data-fa="▤ رسانه" data-en="▤ Media">▤ رسانه</a>
-      <a href="#contact" data-fa="✉ ارتباط" data-en="✉ Contact">✉ ارتباط</a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="باز کردن منو">☰</button>
+    <nav class="navlinks" id="navlinks">
+      <button onclick="goTo('home')" data-fa="⌂ خانه" data-en="⌂ Home">⌂ خانه</button>
+      <button onclick="goTo('about')" data-fa="♙ درباره من" data-en="♙ About">♙ درباره من</button>
+      <button onclick="goTo('media')" data-fa="▤ رسانه" data-en="▤ Media">▤ رسانه</button>
+      <button onclick="goTo('contact')" data-fa="✉ ارتباط" data-en="✉ Contact">✉ ارتباط</button>
+      <button class="admin-open" onclick="openAdmin()" data-fa="⚙ مدیریت" data-en="⚙ Admin">⚙ مدیریت</button>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
 <main>
-<section class="hero" id="home">
-  <div class="container hero-grid">
-
-    <div class="globe-wrap">
-      <div class="globe">
-        <div class="globe-label">AMIR • GLOBAL MEDIA</div>
-      </div>
-    </div>
-
-    <div class="hero-copy">
-      <div class="eyebrow"
-        data-fa="رسانه مستقل • صدای متفاوت"
-        data-en="INDEPENDENT MEDIA • A DIFFERENT VOICE">
-        رسانه مستقل • صدای متفاوت
-      </div>
-
-      <h1>AMIR <span>OFFICIAL</span></h1>
-      <div class="hero-line"></div>
-
-      <p
-        data-fa="اینجا جایی برای دنبال کردن اخبار سیاسی، تحلیل رویدادها و شنیدن دیدگاه‌های شخصی است. با نگاهی مستقل، پرسشگر و آینده‌نگر."
-        data-en="A place for political news, event analysis and personal perspectives. Independent, curious and forward-looking.">
-        اینجا جایی برای دنبال کردن اخبار سیاسی، تحلیل رویدادها و شنیدن دیدگاه‌های شخصی است. با نگاهی مستقل، پرسشگر و آینده‌نگر.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#news" class="btn primary"
-          data-fa="← ورود به رسانه"
-          data-en="Explore Media →">← ورود به رسانه</a>
-        <a href="#about" class="btn"
-          data-fa="بیشتر بدانید"
-          data-en="Discover More">بیشتر بدانید</a>
-      </div>
-    </div>
-
-    <!-- Pahlavi-era inspired Lion and Sun flag -->
-    <div class="flag-area">
-      <div class="flag-frame">
-        <svg class="flag" viewBox="0 0 600 360" role="img"
-          aria-label="پرچم سه‌رنگ شیر و خورشید با الهام از پرچم دوره پهلوی">
-
-          <rect width="600" height="120" fill="#16834a"/>
-          <rect y="120" width="600" height="120" fill="#fff"/>
-          <rect y="240" width="600" height="120" fill="#d92835"/>
-
-          <!-- Sun -->
-          <circle cx="300" cy="180" r="55" fill="#e6ae32"/>
-          <g stroke="#d79a25" stroke-width="7">
-            <path d="M300 105V88 M300 272V255 M225 180H208 M392 180H375
-            M247 127L234 114 M366 246L353 233 M353 127L366 114 M234 246L247 233"/>
-          </g>
-
-          <!-- Stylized lion -->
-          <g fill="#9d2631" stroke="#7c1c2c" stroke-width="3">
-            <path d="M267 205
-              C242 190 238 163 253 145
-              C270 126 298 131 310 146
-              C324 160 323 182 310 195
-              L333 208 L352 205 L361 219
-              L343 230 L317 225
-              L303 248 L285 249 L290 225
-              L266 228 L250 219 Z"/>
-            <path d="M253 145
-              C235 137 229 151 238 162
-              C224 165 225 181 241 187
-              C229 199 243 214 258 205
-              C273 198 280 181 274 163 Z"/>
-          </g>
-
-          <!-- Sword -->
-          <path d="M337 159L370 115L380 119L348 166"
-            stroke="#8b1f2b" stroke-width="8" fill="none"/>
-          <path d="M363 113L385 99" stroke="#8b1f2b" stroke-width="7"/>
-
-          <!-- Crown -->
-          <path d="M273 119L278 94L293 108L300 85L309 108L324 94L328 119Z"
-            fill="#e5b43f" stroke="#a87920" stroke-width="3"/>
-          <rect x="274" y="118" width="54" height="10" rx="3" fill="#e5b43f"/>
-        </svg>
-      </div>
-
-      <div class="flag-caption"
-        data-fa="الهام‌گرفته از پرچم تاریخی شیر و خورشید"
-        data-en="Inspired by the historic Lion and Sun flag">
-        الهام‌گرفته از پرچم تاریخی شیر و خورشید
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- NEWS -->
-<section id="news">
-  <div class="container">
-    <div class="section-heading">
-      <h2 data-fa="آخرین مطالب" data-en="Latest Content">آخرین مطالب</h2>
-    </div>
-
-    <div class="cards">
-
-      <article class="card">
-        <div class="card-art">🌍</div>
-        <div class="card-content">
-          <span class="card-tag"
-            data-fa="اخبار سیاسی"
-            data-en="POLITICAL NEWS">اخبار سیاسی</span>
-          <h3 data-fa="نگاهی به تحولات روز جهان"
-            data-en="A Look at World Events">نگاهی به تحولات روز جهان</h3>
-          <p data-fa="مرور مهم‌ترین اخبار و تحولات سیاسی در سطح جهان."
-            data-en="A review of important political events around the world.">
-            مرور مهم‌ترین اخبار و تحولات سیاسی در سطح جهان.
-          </p>
-          <a class="card-link" href="#contact"
-            data-fa="مطالعه بیشتر ←"
-            data-en="Read More →">مطالعه بیشتر ←</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-art">♟</div>
-        <div class="card-content">
-          <span class="card-tag"
-            data-fa="تحلیل سیاسی"
-            data-en="POLITICAL ANALYSIS">تحلیل سیاسی</span>
-          <h3 data-fa="فراتر از تیترها"
-            data-en="Beyond the Headlines">فراتر از تیترها</h3>
-          <p data-fa="تحلیل رویدادها، بررسی زمینه‌ها و مقایسه دیدگاه‌ها."
-            data-en="Analysis of events, context and different perspectives.">
-            تحلیل رویدادها، بررسی زمینه‌ها و مقایسه دیدگاه‌ها.
-          </p>
-          <a class="card-link" href="#contact"
-            data-fa="مطالعه بیشتر ←"
-            data-en="Read More →">مطالعه بیشتر ←</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-art">✍</div>
-        <div class="card-content">
-          <span class="card-tag"
-            data-fa="دیدگاه شخصی"
-            data-en="PERSONAL OPINION">دیدگاه شخصی</span>
-          <h3 data-fa="یادداشت‌های امیر"
-            data-en="Amir's Notes">یادداشت‌های امیر</h3>
-          <p data-fa="فضایی برای بیان نظر شخصی و دعوت به گفت‌وگوی محترمانه."
-            data-en="Personal perspectives and an invitation to respectful discussion.">
-            فضایی برای بیان نظر شخصی و دعوت به گفت‌وگوی محترمانه.
-          </p>
-          <a class="card-link" href="#contact"
-            data-fa="مطالعه بیشتر ←"
-            data-en="Read More →">مطالعه بیشتر ←</a>
-        </div>
-      </article>
-
-    </div>
-
-    <p style="text-align:center;color:#8f849c;font-size:12px;margin-top:20px"
-      data-fa="مطالب این بخش نمونه هستند. برای انتشار اخبار واقعی، منبع و تاریخ را اضافه کن."
-      data-en="These are sample cards. Add sources and dates when publishing real news.">
-      مطالب این بخش نمونه هستند. برای انتشار اخبار واقعی، منبع و تاریخ را اضافه کن.
-    </p>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="container about-content">
-    <div class="section-heading">
-      <h2 data-fa="درباره AMIR" data-en="About AMIR">درباره AMIR</h2>
-    </div>
-
-    <h3 data-fa="یک صدا، هزار پرسش"
-      data-en="One Voice, A Thousand Questions">
-      یک صدا، هزار پرسش
-    </h3>
-
-    <p
-      data-fa="من امیر هستم؛ علاقه‌مند به سیاست، رسانه و بررسی تحولات جهان. هدف این رسانه، به اشتراک گذاشتن تحلیل‌ها، دیدگاه‌ها و محتوای سیاسی با تأکید بر آگاهی، گفت‌وگو و نگاه مستقل است."
-      data-en="I'm Amir, interested in politics, media and world affairs. This platform shares analysis, perspectives and political content with an emphasis on awareness, dialogue and independent thinking.">
-      من امیر هستم؛ علاقه‌مند به سیاست، رسانه و بررسی تحولات جهان. هدف این رسانه، به اشتراک گذاشتن تحلیل‌ها، دیدگاه‌ها و محتوای سیاسی با تأکید بر آگاهی، گفت‌وگو و نگاه مستقل است.
-    </p>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="section-heading">
-      <h2 data-fa="در ارتباط باشیم" data-en="Let's Connect">در ارتباط باشیم</h2>
-    </div>
-
-    <div class="contact-grid">
-
-      <div class="contact-box">
-        <h3 data-fa="ما را دنبال کنید" data-en="Follow Me">
-          ما را دنبال کنید
-        </h3>
-
-        <p data-fa="برای دیدن مطالب و محتوای جدید، در شبکه‌های اجتماعی همراه من باش."
-          data-en="Follow my social media for new posts and updates.">
-          برای دیدن مطالب و محتوای جدید، در شبکه‌های اجتماعی همراه من باش.
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="kicker" data-fa="رسانه مستقل • صدای متفاوت" data-en="INDEPENDENT MEDIA • A DIFFERENT VOICE">رسانه مستقل • صدای متفاوت</div>
+        <h1>AMIR <span>OFFICIAL</span></h1>
+        <div class="hero-line"></div>
+        <p data-fa="اینجا جایی برای دنبال کردن اخبار سیاسی، تحلیل رویدادها و شنیدن دیدگاه‌های شخصی است. با نگاهی مستقل، پرسشگر و آینده‌نگر."
+           data-en="A place for political news, event analysis and personal perspectives. Independent, curious and forward-looking.">
+          اینجا جایی برای دنبال کردن اخبار سیاسی، تحلیل رویدادها و شنیدن دیدگاه‌های شخصی است. با نگاهی مستقل، پرسشگر و آینده‌نگر.
         </p>
-
-        <div class="socials">
-          <a href="https://www.instagram.com/amirshz021/"
-            target="_blank" rel="noopener">◎ Instagram</a>
-          <a href="https://t.me/"
-            target="_blank" rel="noopener">➤ Telegram</a>
-          <a href="https://www.youtube.com/"
-            target="_blank" rel="noopener">▶ YouTube</a>
-          <a href="https://x.com/"
-            target="_blank" rel="noopener">𝕏 X</a>
+        <div class="actions">
+          <button class="btn primary" onclick="goTo('media')" data-fa="← ورود به رسانه" data-en="Explore Media →">← ورود به رسانه</button>
+          <button class="btn" onclick="goTo('about')" data-fa="بیشتر بدانید" data-en="Discover More">بیشتر بدانید</button>
         </div>
       </div>
-
-      <div class="contact-box">
-        <h3 data-fa="تماس با امیر" data-en="Contact Amir">
-          تماس با امیر
-        </h3>
-
-        <a class="contact-link"
-          href="https://www.instagram.com/amirshz021/"
-          target="_blank" rel="noopener">
-          <span>◎</span> @amirshz021
-        </a>
-
-        <a class="contact-link"
-          href="mailto:phantom11780@gmail.com">
-          <span>✉</span> phantom11780@gmail.com
-        </a>
+      <div class="hero-art">
+        <div class="orbit">
+          <div class="orbit-center">AMIR</div>
+          <div class="orbit-label">GLOBAL • INDEPENDENT • MEDIA</div>
+        </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="content-section" id="about">
+    <div class="container">
+      <div class="section-title">
+        <small>WHO WE ARE</small>
+        <h2 data-fa="درباره AMIR" data-en="About AMIR">درباره AMIR</h2>
+        <p data-fa="یک صدا، هزار پرسش" data-en="One Voice, A Thousand Questions">یک صدا، هزار پرسش</p>
+      </div>
+      <div class="panel about">
+        <div class="about-crown">♛</div>
+        <h2>AMIROFFICIAL</h2>
+        <p data-fa="من امیر هستم؛ علاقه‌مند به سیاست، رسانه و بررسی تحولات جهان. هدف این رسانه، به اشتراک گذاشتن تحلیل‌ها، دیدگاه‌ها و محتوای سیاسی با تأکید بر آگاهی، گفت‌وگو و نگاه مستقل است."
+           data-en="I'm Amir, interested in politics, media and world affairs. This platform shares analysis, perspectives and political content with an emphasis on awareness, dialogue and independent thinking.">
+          من امیر هستم؛ علاقه‌مند به سیاست، رسانه و بررسی تحولات جهان. هدف این رسانه، به اشتراک گذاشتن تحلیل‌ها، دیدگاه‌ها و محتوای سیاسی با تأکید بر آگاهی، گفت‌وگو و نگاه مستقل است.
+        </p>
+        <div class="stats">
+          <div class="stat"><strong>01</strong><span data-fa="نگاه مستقل" data-en="Independent View">نگاه مستقل</span></div>
+          <div class="stat"><strong>02</strong><span data-fa="تحلیل سیاسی" data-en="Political Analysis">تحلیل سیاسی</span></div>
+          <div class="stat"><strong>03</strong><span data-fa="گفت‌وگوی آگاهانه" data-en="Informed Dialogue">گفت‌وگوی آگاهانه</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="media">
+    <div class="container">
+      <div class="section-title">
+        <small>LATEST CONTENT</small>
+        <h2 data-fa="آخرین مطالب" data-en="Latest Content">آخرین مطالب</h2>
+        <p data-fa="مطالب و دیدگاه‌های AMIROFFICIAL" data-en="AMIROFFICIAL articles and perspectives">مطالب و دیدگاه‌های AMIROFFICIAL</p>
+      </div>
+      <div class="article-window">
+        <div class="article-track" id="articleTrack"></div>
+      </div>
+      <div class="article-controls">
+        <button class="circle-btn" onclick="moveArticles(-1)" aria-label="قبلی">‹</button>
+        <div class="dots" id="articleDots"></div>
+        <button class="circle-btn" onclick="moveArticles(1)" aria-label="بعدی">›</button>
+      </div>
+      <p style="text-align:center;color:#8f849c;font-size:11px;margin-top:20px"
+         data-fa="برای افزودن مطالب جدید از پنل مدیریت استفاده کن."
+         data-en="Use the admin panel to add new articles.">
+        برای افزودن مطالب جدید از پنل مدیریت استفاده کن.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <small>LET'S CONNECT</small>
+        <h2 data-fa="در ارتباط باشیم" data-en="Let's Connect">در ارتباط باشیم</h2>
+        <p data-fa="صدای تو شنیده می‌شود" data-en="Your voice matters">صدای تو شنیده می‌شود</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3 data-fa="شبکه‌های اجتماعی" data-en="Social Media">شبکه‌های اجتماعی</h3>
+          <p data-fa="برای دنبال کردن مطالب جدید، در شبکه‌های اجتماعی همراه من باش."
+             data-en="Follow me on social media for new updates.">
+            برای دنبال کردن مطالب جدید، در شبکه‌های اجتماعی همراه من باش.
+          </p>
+          <div class="socials">
+            <a href="https://instagram.com/amirshz021" target="_blank" rel="noopener">◎ Instagram</a>
+            <a href="https://t.me/" target="_blank" rel="noopener">➤ Telegram</a>
+            <a href="https://youtube.com/" target="_blank" rel="noopener">▶ YouTube</a>
+            <a href="https://x.com/" target="_blank" rel="noopener">𝕏 X</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <h3 data-fa="ارتباط مستقیم" data-en="Direct Contact">ارتباط مستقیم</h3>
+          <a class="contact-link" href="https://instagram.com/amirshz021" target="_blank" rel="noopener"><span>◎</span> @amirshz021</a>
+          <a class="contact-link" href="mailto:phantom11780@gmail.com"><span>✉</span> phantom11780@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<!-- FOOTER -->
 <footer>
   <div class="container footer-inner">
     <div>© <span id="year"></span> AMIROFFICIAL — All Rights Reserved</div>
-    <div class="footer-slogan">THINK • ANALYZE • DISCUSS</div>
-    <div data-fa="قدرت در آگاهی است..." data-en="Knowledge is power...">
-      قدرت در آگاهی است...
-    </div>
+    <div class="slogan">THINK • ANALYZE • DISCUSS</div>
+    <div data-fa="قدرت در آگاهی است..." data-en="Knowledge is power...">قدرت در آگاهی است...</div>
   </div>
 </footer>
 
-<script>
-function setLanguage(lang){
-  document.documentElement.lang=lang;
-  document.documentElement.dir=lang==="fa"?"rtl":"ltr";
-  document.body.classList.toggle("english",lang==="en");
+<!-- پنل مدیریت -->
+<div class="admin-modal" id="adminModal">
+  <div class="admin-box">
+    <div class="admin-head">
+      <h2>AMIROFFICIAL ADMIN</h2>
+      <button class="close-admin" onclick="closeAdmin()">✕</button>
+    </div>
 
-  document.querySelectorAll("[data-fa]").forEach(function(el){
-    el.textContent=el.getAttribute("data-"+lang);
-  });
+    <div id="adminLogin">
+      <div id="setupPassword" style="display:none">
+        <h3>ساخت رمز مدیریت</h3>
+        <p class="admin-note">برای اولین ورود، رمز دلخواهت را دو بار وارد کن.</p>
+        <label for="firstPassword">رمز جدید</label>
+        <input id="firstPassword" type="password" autocomplete="new-password" placeholder="حداقل ۸ کاراکتر">
+        <label for="repeatPassword">تکرار رمز</label>
+        <input id="repeatPassword" type="password" autocomplete="new-password" placeholder="تکرار رمز">
+        <button class="admin-action" onclick="setupAdminPassword()">ثبت رمز مدیریت</button>
+      </div>
 
-  document.getElementById("faBtn").classList.toggle("active",lang==="fa");
-  document.getElementById("enBtn").classList.toggle("active",lang==="en");
-}
+      <div id="normalLogin" style="display:none">
+        <p class="admin-note">رمز مدیریت را وارد کن.</p>
+        <label for="adminPassword">رمز عبور</label>
+        <input id="adminPassword" type="password" autocomplete="current-password" placeholder="رمز عبور">
+        <button class="admin-action" onclick="loginAdmin()">ورود به پنل</button>
+      </div>
+      <p id="adminMessage" role="status"></p>
+    </div>
 
-document.getElementById("year").textContent=new Date().getFullYear();
-</script>
+    <div id="adminEditor">
+      <p class="admin-note">از این قسمت می‌توانی مطلب جدید اضافه یا مطالب قبلی را حذف کنی.</p>
+      <label for="newTitle">عنوان مطلب</label>
+      <input id="newTitle" maxlength="100" placeholder="عنوان مطلب">
+      <label for="newCategory">دسته‌بندی</label>
+      <input id="newCategory" maxlength="40" placeholder="مثلاً تحلیل سیاسی">
+      <label for="newDescription">متن مطلب</label>
+      <textarea id="newDescription" maxlength="500" placeholder="متن مطلب"></textarea>
+      <label for="newIcon">نماد مطلب</label>
+      <input id="newIcon" maxlength="8" value="✦">
+      <button class="admin-action" onclick="addArticle()">+ افزودن مطلب</button>
+      <div style="margin-top:25px">
+        <h3>مطالب ثبت‌شده</h3>
+        <div id="adminArticleList"></div>
+      </div>
+      <button class="admin-action" onclick="logoutAdmin()">خروج از پنل</button>
+    </div>
+  </div>
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>
