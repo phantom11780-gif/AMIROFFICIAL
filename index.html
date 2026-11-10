@@ -2,200 +2,237 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AMIROFFICIAL</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: #09070f;
-      color: white;
-      font-family: Tahoma, sans-serif;
-    }
-
-    header {
-      padding: 25px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #30233f;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      color: white;
-    }
-
-    .logo span {
-      color: #a78bfa;
-    }
-
-    nav a {
-      color: #ddd;
-      text-decoration: none;
-      margin: 10px;
-    }
-
-    .hero {
-      min-height: 75vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
-      background: radial-gradient(circle, #38204f, #09070f 70%);
-    }
-
-    .hero h1 {
-      font-size: clamp(35px, 8vw, 65px);
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      color: #b99af9;
-    }
-
-    .hero p {
-      color: #c7bfd2;
-      line-height: 2;
-      max-width: 600px;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background: #a78bfa;
-      color: #100a19;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 75px 8%;
-    }
-
-    h2 {
-      color: #c5a7ff;
-      margin-bottom: 25px;
-      font-size: 30px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #171221;
-      border: 1px solid #49365d;
-      padding: 30px;
-      border-radius: 10px;
-    }
-
-    .card h3 {
-      color: #c5a7ff;
-      margin-bottom: 15px;
-    }
-
-    .card p, section > p {
-      color: #c7bfd2;
-      line-height: 2;
-    }
-
-    footer {
-      padding: 30px;
-      text-align: center;
-      color: #aaa;
-      border-top: 1px solid #30233f;
-    }
-
-    @media(max-width: 600px) {
-      header {
-        flex-direction: column;
-        gap: 18px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09090d">
+<meta name="description" content="AMIROFFICIAL | رسانه شخصی، اخبار سیاسی، تحلیل و دیدگاه">
+<title>AMIROFFICIAL | Independent Voice</title>
+<style>
+:root{
+  --bg:#09090d;
+  --panel:#12121b;
+  --purple:#9b5cff;
+  --silver:#d7d7e2;
+  --muted:#9999aa;
+  --line:rgba(255,255,255,.1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:#fff;
+  font-family:Tahoma,Arial,sans-serif;
+  line-height:1.8;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1120px,90%);margin:auto}
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(9,9,13,.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+nav{
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:15px;
+}
+.logo{
+  font-size:22px;font-weight:900;letter-spacing:2px;
+  background:linear-gradient(90deg,#fff,#a56aff);
+  color:transparent;background-clip:text;
+}
+.navlinks{display:flex;gap:22px;align-items:center}
+.navlinks a{font-size:13px;color:var(--silver)}
+.navlinks a:hover{color:var(--purple)}
+.lang{
+  background:var(--purple);color:#fff;border:0;
+  padding:8px 14px;border-radius:20px;cursor:pointer;
+}
+.hero{
+  min-height:610px;display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  background:
+  radial-gradient(ellipse at 75% 35%,rgba(133,64,255,.23),transparent 45%),
+  radial-gradient(ellipse at 10% 90%,rgba(255,255,255,.06),transparent 35%);
+}
+.hero-content{position:relative;z-index:1;padding:90px 0}
+.eyebrow{color:#bd91ff;letter-spacing:3px;font-size:12px}
+h1{
+  font-size:clamp(42px,8vw,82px);
+  line-height:1.2;margin:18px 0;
+  letter-spacing:1px;
+}
+.gradient{
+  background:linear-gradient(90deg,#fff,#a66aff);
+  color:transparent;background-clip:text;
+}
+.hero p{max-width:620px;color:#b9b9c8;font-size:16px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{
+  display:inline-block;padding:12px 22px;border-radius:8px;
+  border:1px solid var(--purple);transition:.25s;
+}
+.btn.primary{background:var(--purple);color:white}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px #8c4bff44}
+.orb{
+  position:absolute;width:330px;height:330px;border-radius:50%;
+  left:8%;top:23%;
+  background:radial-gradient(circle at 35% 30%,#e2d2ff,#8b43e8 30%,#211238 68%,transparent 72%);
+  filter:blur(1px);opacity:.65;
+  box-shadow:0 0 100px #8c4bff55;
+  animation:float 7s ease-in-out infinite;
+}
+@keyframes float{50%{transform:translateY(-25px) scale(1.04)}}
+section{padding:85px 0}
+.section-title{font-size:30px;margin:0 0 10px}
+.section-desc{color:var(--muted);margin:0 0 35px}
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
+.card{
+  background:linear-gradient(145deg,#171722,#101016);
+  border:1px solid var(--line);border-radius:16px;
+  padding:24px;transition:.3s;
+}
+.card:hover{transform:translateY(-7px);border-color:#9b5cff88}
+.tag{color:#bb91ff;font-size:12px}
+.card h3{font-size:19px;margin:12px 0}
+.card p{font-size:14px;color:#aaaaba}
+.card a{color:#c59aff;font-size:13px}
+.about{
+  background:linear-gradient(110deg,#171222,#101018);
+  border-block:1px solid var(--line);
+}
+.about-box{max-width:780px}
+.about-box p{color:#c0bfca}
+.contact{text-align:center}
+.socials{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.socials a{
+  border:1px solid var(--line);padding:10px 18px;
+  border-radius:30px;color:#d5c1ff;
+}
+footer{
+  border-top:1px solid var(--line);padding:25px 0;
+  color:#777789;text-align:center;font-size:12px;
+}
+footer strong{color:#c39aff}
+[dir="ltr"] body{text-align:left}
+@media(max-width:760px){
+  .navlinks{gap:10px}
+  .navlinks a{font-size:11px}
+  .logo{font-size:17px}
+  .orb{width:220px;height:220px;left:-50px;top:30%;opacity:.4}
+  .hero{min-height:560px}
+  .cards{grid-template-columns:1fr}
+  section{padding:65px 0}
+}
+@media(max-width:420px){
+  nav{flex-wrap:wrap;padding:12px 0}
+  .navlinks{order:3;width:100%;justify-content:space-between}
+}
+</style>
 </head>
-
 <body>
 
-  <header>
-    <div class="logo">AMIR<span>OFFICIAL</span></div>
-
+<header>
+  <div class="container">
     <nav>
-      <a href="#home">خانه</a>
-      <a href="#about">درباره من</a>
-      <a href="#news">رسانه</a>
-      <a href="#contact">ارتباط</a>
+      <a class="logo" href="#home">AMIROFFICIAL</a>
+      <div class="navlinks">
+        <a href="#home" data-fa="خانه" data-en="Home">خانه</a>
+        <a href="#about" data-fa="درباره من" data-en="About">درباره من</a>
+        <a href="#news" data-fa="رسانه" data-en="Media">رسانه</a>
+        <a href="#contact" data-fa="ارتباط" data-en="Contact">ارتباط</a>
+      </div>
+      <button class="lang" id="language">EN</button>
     </nav>
-  </header>
-
-  <div class="hero" id="home">
-    <h1>به دنیای <span>AMIROFFICIAL</span> خوش آمدی</h1>
-
-    <p>
-      رسانه شخصی سیاست، تحلیل و دیدگاه‌های مستقل.
-      فراتر از تیترها، به دنبال حقیقت.
-    </p>
-
-    <a class="button" href="#news">مشاهده مطالب</a>
   </div>
+</header>
 
-  <section id="about">
-    <h2>درباره من</h2>
-    <p>
-      AMIROFFICIAL فضایی برای انتشار اخبار سیاسی،
-      تحلیل رویدادها و بیان دیدگاه‌های شخصی است.
-    </p>
-  </section>
-
-  <section id="news">
-    <h2>بخش رسانه</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>اخبار سیاسی</h3>
-        <p>مرور و بررسی مهم‌ترین رویدادهای سیاسی.</p>
-      </div>
-
-      <div class="card">
-        <h3>تحلیل سیاسی</h3>
-        <p>بررسی اتفاقات و تحولات سیاسی جهان.</p>
-      </div>
-
-      <div class="card">
-        <h3>دیدگاه شخصی</h3>
-        <p>نظرات و نوشته‌های اختصاصی AMIROFFICIAL.</p>
-      </div>
-
+<main>
+<section class="hero" id="home">
+  <div class="orb"></div>
+  <div class="container hero-content">
+    <div class="eyebrow" data-fa="رسانه مستقل • صدای متفاوت" data-en="INDEPENDENT MEDIA • A DIFFERENT VOICE">رسانه مستقل • صدای متفاوت</div>
+    <h1>𝑨𝑴𝑰𝑹<br><span class="gradient">OFFICIAL</span></h1>
+    <p data-fa="اینجا جایی برای دنبال کردن اخبار سیاسی، تحلیل رویدادها و شنیدن دیدگاه‌های شخصی است. با نگاهی مستقل، پرسشگر و آینده‌نگر." data-en="A space for political news, thoughtful analysis and personal perspectives. Independent, curious and forward-looking.">اینجا جایی برای دنبال کردن اخبار سیاسی، تحلیل رویدادها و شنیدن دیدگاه‌های شخصی است. با نگاهی مستقل، پرسشگر و آینده‌نگر.</p>
+    <div class="actions">
+      <a href="#news" class="btn primary" data-fa="ورود به رسانه" data-en="Explore Media">ورود به رسانه</a>
+      <a href="#about" class="btn" data-fa="بیشتر بدانید" data-en="Discover More">بیشتر بدانید</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2>ارتباط با من</h2>
-    <p>برای دنبال کردن مطالب جدید به اینستاگرام من سر بزن.</p>
-    <a class="button"
-       href="https://www.instagram.com/"
-       target="_blank">
-       Instagram
-    </a>
-  </section>
+<section id="about">
+  <div class="container about-box">
+    <div class="eyebrow" data-fa="درباره AMIR" data-en="ABOUT AMIR">درباره AMIR</div>
+    <h2 class="section-title" data-fa="یک صدا، هزار پرسش" data-en="One Voice, A Thousand Questions">یک صدا، هزار پرسش</h2>
+    <p data-fa="من امیر هستم؛ علاقه‌مند به سیاست، رسانه و بررسی تحولات جهان. هدف این صفحه، به اشتراک گذاشتن تحلیل‌ها، دیدگاه‌ها و محتوای سیاسی با تأکید بر گفت‌وگوی آگاهانه است." data-en="I'm Amir, interested in politics, media and global affairs. This platform shares analysis, perspectives and political content with an emphasis on informed discussion.">من امیر هستم؛ علاقه‌مند به سیاست، رسانه و بررسی تحولات جهان. هدف این صفحه، به اشتراک گذاشتن تحلیل‌ها، دیدگاه‌ها و محتوای سیاسی با تأکید بر گفت‌وگوی آگاهانه است.</p>
+  </div>
+</section>
 
-  <footer>
-    © 2026 AMIROFFICIAL — All Rights Reserved
-  </footer>
+<section id="news">
+  <div class="container">
+    <div class="eyebrow" data-fa="آخرین مطالب" data-en="LATEST CONTENT">آخرین مطالب</div>
+    <h2 class="section-title" data-fa="رسانه و دیدگاه‌ها" data-en="Media & Perspectives">رسانه و دیدگاه‌ها</h2>
+    <p class="section-desc" data-fa="اخبار، تحلیل‌ها و یادداشت‌های شخصی" data-en="News, analysis and personal commentary">اخبار، تحلیل‌ها و یادداشت‌های شخصی</p>
+    <div class="cards">
+      <article class="card">
+        <span class="tag" data-fa="اخبار سیاسی" data-en="POLITICAL NEWS">اخبار سیاسی</span>
+        <h3 data-fa="نگاهی به تحولات روز جهان" data-en="A Look at Today's World">نگاهی به تحولات روز جهان</h3>
+        <p data-fa="در این بخش می‌توانی اخبار مهم و منابع معتبر را معرفی کنی." data-en="Share important headlines and reliable sources in this section.">در این بخش می‌توانی اخبار مهم و منابع معتبر را معرفی کنی.</p>
+        <a href="#contact" data-fa="به‌زودی بیشتر" data-en="More coming soon">به‌زودی بیشتر</a>
+      </article>
+      <article class="card">
+        <span class="tag" data-fa="تحلیل" data-en="ANALYSIS">تحلیل</span>
+        <h3 data-fa="فراتر از تیترها" data-en="Beyond the Headlines">فراتر از تیترها</h3>
+        <p data-fa="تحلیل رویدادها، بررسی زمینه‌ها و مقایسه دیدگاه‌ها." data-en="Explore events, their context and different perspectives.">تحلیل رویدادها، بررسی زمینه‌ها و مقایسه دیدگاه‌ها.</p>
+        <a href="#contact" data-fa="به‌زودی بیشتر" data-en="More coming soon">به‌زودی بیشتر</a>
+      </article>
+      <article class="card">
+        <span class="tag" data-fa="دیدگاه شخصی" data-en="PERSONAL OPINION">دیدگاه شخصی</span>
+        <h3 data-fa="یادداشت‌های امیر" data-en="Amir's Notes">یادداشت‌های امیر</h3>
+        <p data-fa="فضایی برای بیان نظر شخصی و دعوت به گفت‌وگوی محترمانه." data-en="Personal opinions and an invitation to respectful discussion.">فضایی برای بیان نظر شخصی و دعوت به گفت‌وگوی محترمانه.</p>
+        <a href="#contact" data-fa="به‌زودی بیشتر" data-en="More coming soon">به‌زودی بیشتر</a>
+      </article>
+    </div>
+    <p class="section-desc" style="margin-top:22px" data-fa="مطالب این کارت‌ها نمونه هستند؛ اخبار واقعی را همراه با منبع و تاریخ انتشار اضافه کن." data-en="These cards are examples. Add real articles with sources and publication dates.">مطالب این کارت‌ها نمونه هستند؛ اخبار واقعی را همراه با منبع و تاریخ انتشار اضافه کن.</p>
+  </div>
+</section>
 
+<section class="about" id="contact">
+  <div class="container contact">
+    <div class="eyebrow" data-fa="در ارتباط باشیم" data-en="LET'S CONNECT">در ارتباط باشیم</div>
+    <h2 class="section-title" data-fa="صدای تو شنیده می‌شود" data-en="Your Voice Matters">صدای تو شنیده می‌شود</h2>
+    <p class="section-desc" data-fa="برای دنبال کردن مطالب و ارتباط با من، از شبکه‌های اجتماعی استفاده کن." data-en="Follow my content and connect through social media.">برای دنبال کردن مطالب و ارتباط با من، از شبکه‌های اجتماعی استفاده کن.</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
+      <a href="mailto:hello@example.com">Email ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>𝑨𝑴𝑰𝑹𝑶𝑭𝑭𝑰𝑪𝑰𝑨𝑳</strong>
+    <p>© <span id="year"></span> AMIROFFICIAL — <span data-fa="تمامی حقوق محفوظ است." data-en="All rights reserved.">تمامی حقوق محفوظ است.</span></p>
+  </div>
+</footer>
+
+<script>
+let currentLang="fa";
+const languageButton=document.getElementById("language");
+languageButton.addEventListener("click",()=>{
+  currentLang=currentLang==="fa"?"en":"fa";
+  document.documentElement.lang=currentLang;
+  document.documentElement.dir=currentLang==="fa"?"rtl":"ltr";
+  document.querySelectorAll("[data-fa]").forEach(element=>{
+    element.textContent=element.dataset[currentLang];
+  });
+  languageButton.textContent=currentLang==="fa"?"EN":"FA";
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
