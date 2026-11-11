@@ -8,8 +8,8 @@
 const SUPABASE_URL = "https://tfbanllbaopeqyexlfxm.supabase.co";
 
 // کلید عمومی anon یا publishable را از Supabase بردار و اینجا قرار بده.
-// هرگز service_role key را در سایت قرار نده.
-const SUPABASE_ANON_KEY = "کلید_عمومی_اینجا";
+// هرگز service_role key را در اینجاا قرار نده.
+const SUPABASE_ANON_KEY = "sb_publishable_huzTGcD3rQtxOXJFGK-90Q__TBHiLzE";
 
 let db = null;
 let currentUser = null;
