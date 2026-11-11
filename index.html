@@ -4,366 +4,970 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090510">
-<meta name="description" content="AMIROFFICIAL - Independent Media">
+<meta name="theme-color" content="#080611">
+<meta name="description" content="AMIROFFICIAL - Independent Media, Political Analysis and Perspectives">
 <title>AMIROFFICIAL | Independent Media</title>
 
 <style>
-:root{
-  --bg:#090510;--panel:#150d20;--purple:#a020ff;
-  --light:#d28aff;--silver:#e8e3ee;--muted:#aaa0b5;
+:root {
+  --bg:#080611;
+  --surface:#110d1d;
+  --surface2:#191126;
+  --purple:#a855f7;
+  --purple2:#7c3aed;
+  --pink:#d946ef;
+  --white:#f8f5ff;
+  --muted:#aaa2b8;
+  --border:#ffffff15;
+  --radius:22px;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:#fff;
-  font-family:Tahoma,Arial,sans-serif;overflow-x:hidden;
+
+* {
+  box-sizing:border-box;
 }
-button,input,textarea{font:inherit}
-button{cursor:pointer}
-a{color:inherit;text-decoration:none}
-.container{width:min(1150px,92%);margin:auto}
-.glow{
-  position:fixed;width:250px;height:250px;border-radius:50%;
-  background:#9700ff25;filter:blur(100px);z-index:-1;
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+}
+
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--white);
+  font-family:Tahoma,Arial,sans-serif;
+  overflow-x:hidden;
+}
+
+button,input,textarea {
+  font:inherit;
+}
+
+button {
+  cursor:pointer;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+.container {
+  width:min(1160px,92%);
+  margin:auto;
+}
+
+body:before {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
   pointer-events:none;
-}
-.glow.one{top:10%;left:-120px}
-.glow.two{bottom:5%;right:-120px}
-body:before{
-  content:"";position:fixed;inset:0;z-index:-2;
   background:
-    radial-gradient(ellipse at 15% 20%,#6900a52b,transparent 40%),
-    radial-gradient(ellipse at 85% 70%,#8a00ff24,transparent 40%),
-    repeating-linear-gradient(135deg,transparent 0 85px,#ffffff04 86px 87px);
+    radial-gradient(ellipse at 10% 15%,#7c3aed20,transparent 38%),
+    radial-gradient(ellipse at 90% 60%,#a855f720,transparent 40%),
+    linear-gradient(145deg,#080611,#0d0918);
 }
 
-/* نوار بالا */
-.topbar{border-bottom:1px solid #7737a455;background:#090510}
-.top-inner{
-  min-height:42px;display:flex;align-items:center;
-  justify-content:space-between;gap:10px;flex-wrap:wrap;
-}
-.top-links{display:flex;gap:20px;flex-wrap:wrap}
-.top-links a{font-size:12px;color:#ddd;direction:ltr}
-.top-links a:hover{color:var(--light)}
-.langs{display:flex;gap:6px}
-.langs button{
-  background:#1b1025;color:white;border:1px solid #75429a;
-  border-radius:20px;padding:6px 14px;font-size:11px;
-}
-.langs button.active{
-  background:linear-gradient(90deg,#7800d9,#bd3cff);
+.glow {
+  position:fixed;
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  background:#9333ea25;
+  filter:blur(100px);
+  pointer-events:none;
+  z-index:-1;
 }
 
-/* هدر و منو */
-header{
-  position:sticky;top:0;z-index:30;
-  background:#0b0713ed;backdrop-filter:blur(15px);
-  border-bottom:1px solid #7737a455;
-}
-.nav{
-  min-height:82px;display:flex;align-items:center;
-  justify-content:space-between;gap:15px;flex-wrap:wrap;
-}
-.brand{display:flex;align-items:center;gap:10px}
-.crown{
-  font-size:43px;color:#c77aff;
-  text-shadow:0 0 25px #a000ff;
-}
-.brand-name{
-  font-family:Georgia,serif;font-style:italic;
-  font-size:clamp(20px,3vw,31px);letter-spacing:1px;
-  background:linear-gradient(90deg,#fff,#aaa0b7,#c04aff);
-  color:transparent;background-clip:text;
-}
-.brand small{
-  display:block;text-align:center;letter-spacing:4px;
-  color:#c2b7d0;font-size:9px;
-}
-.navlinks{display:flex;align-items:center;gap:6px}
-.navlinks button{
-  color:#ddd;background:transparent;border:0;
-  padding:10px 13px;border-radius:25px;font-size:13px;
-}
-.navlinks button:hover,.navlinks button.active{
-  background:linear-gradient(100deg,#7500d5,#ae28f5);
-  color:white;box-shadow:0 0 18px #9500ff55;
-}
-.navlinks .admin-open{border:1px solid #8f44bd}
-.menu-toggle{
-  display:none;background:#1c1028;color:white;
-  border:1px solid #8e44c0;border-radius:10px;
-  width:42px;height:42px;font-size:22px;
+.glow.one {
+  top:5%;
+  left:-150px;
 }
 
-/* بخش اصلی */
-.hero{
-  padding:65px 0 75px;min-height:550px;
-  display:flex;align-items:center;
+.glow.two {
+  bottom:5%;
+  right:-150px;
 }
-.hero-grid{
-  display:grid;grid-template-columns:1.2fr .8fr;
-  gap:35px;align-items:center;
+
+/* نوار بالایی */
+
+.topbar {
+  border-bottom:1px solid var(--border);
+  background:#080611dd;
 }
-.hero-copy{text-align:right}
-.kicker{font-size:13px;color:#d19aff;letter-spacing:2px}
-.hero h1{
-  font-family:Georgia,serif;font-style:italic;
-  font-size:clamp(44px,8vw,88px);
-  margin:17px 0;line-height:1.15;
+
+.top-inner {
+  min-height:43px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
 }
-.hero h1 span{
-  background:linear-gradient(90deg,#fff,#b8a7c9,#b93dff);
-  color:transparent;background-clip:text;
+
+.top-links {
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
 }
-.hero-line{
-  width:90%;height:4px;margin:20px 0;
-  background:linear-gradient(90deg,transparent,#a020ff,#fff,#a020ff);
-  box-shadow:0 0 20px #a020ff;
+
+.top-links a {
+  color:var(--muted);
+  font-size:12px;
+  direction:ltr;
 }
-.hero p{color:#d0c7d9;line-height:2.2;font-size:16px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.btn{
-  border:1px solid #ae4bf3;border-radius:30px;
-  padding:12px 23px;color:white;background:transparent;
+
+.top-links a:hover {
+  color:#d8b4fe;
+}
+
+.langs {
+  display:flex;
+  gap:7px;
+}
+
+.langs button {
+  border:1px solid #ffffff20;
+  border-radius:30px;
+  padding:6px 13px;
+  background:#ffffff08;
+  color:white;
+  font-size:11px;
+}
+
+.langs button.active {
+  background:linear-gradient(100deg,var(--purple2),var(--pink));
+  border-color:transparent;
+}
+
+/* هدر */
+
+header {
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:#0a0714eF;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav {
+  min-height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
+
+.crown {
+  font-size:43px;
+  color:#c084fc;
+  text-shadow:0 0 25px #a855f7;
+}
+
+.brand-name {
+  font-family:Georgia,serif;
+  font-style:italic;
+  font-size:clamp(20px,3vw,30px);
+  letter-spacing:1px;
+  background:linear-gradient(90deg,#fff,#c4b5fd,#e879f9);
+  color:transparent;
+  background-clip:text;
+}
+
+.brand small {
+  display:block;
+  text-align:center;
+  font-size:9px;
+  letter-spacing:4px;
+  color:#a99bbd;
+}
+
+.navlinks {
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.navlinks button {
+  color:#ddd5e8;
+  background:transparent;
+  border:0;
+  padding:11px 14px;
+  border-radius:30px;
+  font-size:13px;
   transition:.25s;
 }
-.btn.primary{
-  background:linear-gradient(100deg,#8100e8,#c02aff);
-  box-shadow:0 0 22px #9500ff55;
+
+.navlinks button:hover,
+.navlinks button.active {
+  background:#a855f725;
+  color:#e9c5ff;
 }
-.btn:hover{
+
+.navlinks .admin-open {
+  border:1px solid #a855f766;
+}
+
+.menu-toggle {
+  display:none;
+  width:43px;
+  height:43px;
+  color:white;
+  background:#ffffff0b;
+  border:1px solid #a855f766;
+  border-radius:13px;
+  font-size:22px;
+}
+
+/* قهرمان صفحه */
+
+.hero {
+  padding:85px 0 95px;
+  min-height:570px;
+  display:flex;
+  align-items:center;
+  position:relative;
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  align-items:center;
+  gap:45px;
+}
+
+.hero-copy {
+  text-align:right;
+}
+
+.kicker {
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:#d8b4fe;
+  font-size:13px;
+  padding:9px 15px;
+  border:1px solid #a855f744;
+  background:#a855f710;
+  border-radius:30px;
+}
+
+.kicker:before {
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#d946ef;
+  box-shadow:0 0 12px #d946ef;
+}
+
+.hero h1 {
+  font-family:Georgia,serif;
+  font-style:italic;
+  font-size:clamp(42px,7vw,83px);
+  line-height:1.15;
+  margin:22px 0;
+  letter-spacing:-2px;
+}
+
+.hero h1 span {
+  display:block;
+  background:linear-gradient(90deg,#fff,#c4b5fd,#d946ef);
+  color:transparent;
+  background-clip:text;
+}
+
+.hero-line {
+  height:3px;
+  width:75%;
+  margin:20px 0;
+  background:linear-gradient(90deg,transparent,#a855f7,#fff);
+  box-shadow:0 0 18px #a855f766;
+}
+
+.hero p {
+  color:#c4bbd0;
+  font-size:15px;
+  line-height:2.3;
+  max-width:610px;
+}
+
+.actions {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:27px;
+}
+
+.btn {
+  border:1px solid #a855f777;
+  border-radius:30px;
+  padding:13px 24px;
+  color:white;
+  background:#ffffff08;
+  transition:.25s;
+}
+
+.btn.primary {
+  background:linear-gradient(110deg,#7c3aed,#c026d3);
+  border:0;
+  box-shadow:0 8px 28px #9333ea44;
+}
+
+.btn:hover {
   transform:translateY(-4px);
-  box-shadow:0 0 25px #a020ff88;
+  box-shadow:0 10px 30px #9333ea55;
 }
-.hero-art{display:grid;place-items:center;min-height:320px}
-.orbit{
-  width:min(300px,70vw);aspect-ratio:1;border-radius:50%;
-  border:1px solid #b35aff99;position:relative;
-  background:radial-gradient(circle at 35% 35%,#8135ad66,transparent 35%),#10091a;
-  box-shadow:0 0 55px #8b00ff55,inset 0 0 45px #9e00ff33;
+
+/* تصویر گرافیکی */
+
+.hero-art {
+  display:grid;
+  place-items:center;
+  min-height:350px;
+}
+
+.orbit {
+  width:min(330px,75vw);
+  aspect-ratio:1;
+  position:relative;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  border:1px solid #c084fc88;
+  background:
+    radial-gradient(circle at 35% 30%,#a855f744,transparent 45%),
+    linear-gradient(145deg,#20112f,#0d0917);
+  box-shadow:
+    0 0 70px #9333ea44,
+    inset 0 0 55px #9333ea33;
   animation:float 6s ease-in-out infinite;
 }
-.orbit:before,.orbit:after{
-  content:"";position:absolute;inset:12%;
-  border:1px solid #bd6aff88;border-radius:50%;
+
+.orbit:before,
+.orbit:after {
+  content:"";
+  position:absolute;
+  inset:12%;
+  border:1px solid #c084fc88;
+  border-radius:50%;
   transform:rotateX(65deg) rotate(-30deg);
 }
-.orbit:after{transform:rotateX(65deg) rotate(45deg)}
-.orbit-center{
-  position:absolute;inset:0;display:grid;place-items:center;
-  font-family:Georgia,serif;font-style:italic;
-  font-size:42px;color:#e4c5ff;text-shadow:0 0 25px #a000ff;
-}
-.orbit-label{
-  position:absolute;bottom:25px;width:100%;
-  text-align:center;letter-spacing:3px;
-  font-size:9px;color:#c69be7;
-}
-@keyframes float{50%{transform:translateY(-13px)}}
 
-/* بخش‌ها */
-section.content-section{padding:65px 0}
-.section-title{text-align:center;margin-bottom:30px}
-.section-title small{color:#c17aff;letter-spacing:3px}
-.section-title h2{font-size:29px;margin:8px 0}
-.section-title p{font-size:13px;color:var(--muted)}
-.panel{
-  background:linear-gradient(140deg,#1b1028,#0c0812);
-  border:1px solid #7133a077;border-radius:22px;
-  padding:30px;box-shadow:0 15px 55px #0005;
+.orbit:after {
+  transform:rotateX(65deg) rotate(45deg);
 }
-.about{text-align:center;max-width:850px;margin:auto}
-.about p{color:#c9c0d1;line-height:2.3}
-.about-crown{
-  font-size:48px;color:#c77aff;
-  text-shadow:0 0 25px #a000ff;
-}
-.stats{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:12px;margin-top:25px;
-}
-.stat{
-  border:1px solid #7133a077;border-radius:14px;
-  padding:15px;background:#ffffff06;
-}
-.stat strong{display:block;color:#d08aff;font-size:22px}
-.stat span{font-size:11px;color:#aaa}
 
-/* اسلایدر مطالب */
-.article-window{overflow:hidden}
-.article-track{
-  display:flex;direction:rtl;gap:16px;
+.orbit-center {
+  font-family:Georgia,serif;
+  font-size:55px;
+  font-style:italic;
+  color:#f0d9ff;
+  text-shadow:0 0 30px #a855f7;
+}
+
+.orbit-label {
+  position:absolute;
+  bottom:29px;
+  width:100%;
+  text-align:center;
+  color:#c4a5fd;
+  font-size:9px;
+  letter-spacing:3px;
+}
+
+@keyframes float {
+  50% { transform:translateY(-14px); }
+}
+
+/* بخش‌های سایت */
+
+.content-section {
+  padding:78px 0;
+}
+
+.section-title {
+  text-align:center;
+  margin-bottom:38px;
+}
+
+.section-title small {
+  color:#c084fc;
+  letter-spacing:3px;
+  font-size:11px;
+}
+
+.section-title h2 {
+  font-size:30px;
+  margin:12px 0;
+}
+
+.section-title p {
+  color:var(--muted);
+  font-size:13px;
+}
+
+.panel {
+  background:linear-gradient(145deg,#191126,#0e0a17);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:35px;
+  box-shadow:0 20px 60px #0005;
+}
+
+.about {
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+
+.about-crown {
+  font-size:52px;
+  color:#c084fc;
+  text-shadow:0 0 25px #a855f7;
+}
+
+.about h2 {
+  letter-spacing:2px;
+}
+
+.about p {
+  color:#c7bfd1;
+  line-height:2.5;
+  font-size:14px;
+}
+
+.stats {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:28px;
+}
+
+.stat {
+  border:1px solid var(--border);
+  background:#ffffff06;
+  border-radius:17px;
+  padding:20px 10px;
+}
+
+.stat strong {
+  display:block;
+  font-size:26px;
+  color:#d8b4fe;
+  margin-bottom:8px;
+}
+
+.stat span {
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* مطالب */
+
+.article-window {
+  overflow:hidden;
+  border-radius:20px;
+}
+
+.article-track {
+  display:flex;
+  direction:rtl;
+  gap:16px;
   transition:transform .4s ease;
 }
-.article{
+
+.article {
   flex:0 0 calc((100% - 32px)/3);
-  min-height:255px;padding:22px;
-  border:1px solid #7133a077;border-radius:18px;
-  background:linear-gradient(145deg,#1b1127,#0d0914);
-  transition:.25s;
+  min-height:270px;
+  padding:24px;
+  border-radius:20px;
+  border:1px solid #ffffff16;
+  background:linear-gradient(145deg,#1c132b,#0e0a17);
+  transition:.3s;
 }
-.article:hover{
-  transform:translateY(-5px);border-color:#c36cff;
-  box-shadow:0 10px 35px #9d00ff22;
+
+.article:hover {
+  transform:translateY(-6px);
+  border-color:#c084fc88;
+  box-shadow:0 15px 35px #9333ea22;
 }
-.article-icon{
-  width:60px;height:60px;display:grid;place-items:center;
-  font-size:32px;border-radius:16px;color:#d19aff;
-  background:#9e28ff18;border:1px solid #9e28ff66;
-  margin-bottom:14px;
+
+.article-icon {
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border-radius:17px;
+  color:#e9d5ff;
+  font-size:30px;
+  background:#a855f722;
+  border:1px solid #a855f755;
+  margin-bottom:17px;
 }
-.article-tag{font-size:11px;color:#d29cff}
-.article h3{font-size:17px;margin:8px 0}
-.article p{font-size:13px;color:#bdb4c7;line-height:2}
-.article small{color:#8f819e;font-size:10px}
-.article-controls{
-  display:flex;justify-content:center;align-items:center;
-  gap:14px;margin-top:25px;
+
+.article-tag {
+  font-size:11px;
+  color:#d8b4fe;
 }
-.circle-btn{
-  width:42px;height:42px;border-radius:50%;
-  background:#190e25;color:white;border:1px solid #a64be4;
-  font-size:20px;
+
+.article h3 {
+  font-size:17px;
+  margin:10px 0;
 }
-.circle-btn:hover{background:#8900dd}
-.dots{display:flex;gap:7px}
-.dot{
-  width:8px;height:8px;border-radius:10px;
-  background:#574267;border:0;padding:0;
+
+.article p {
+  color:#bdb4ca;
+  font-size:13px;
+  line-height:2.1;
 }
-.dot.active{width:24px;background:#bc5aff}
+
+.article small {
+  color:#8e849d;
+  font-size:10px;
+}
+
+.article-controls {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  margin-top:28px;
+}
+
+.circle-btn {
+  width:43px;
+  height:43px;
+  border-radius:50%;
+  background:#1b1228;
+  color:white;
+  border:1px solid #a855f777;
+  font-size:21px;
+}
+
+.circle-btn:hover {
+  background:#7c3aed;
+}
+
+.dots {
+  display:flex;
+  gap:7px;
+}
+
+.dot {
+  width:8px;
+  height:8px;
+  border:0;
+  border-radius:20px;
+  padding:0;
+  background:#57466b;
+}
+
+.dot.active {
+  width:24px;
+  background:#c084fc;
+}
 
 /* ارتباط */
-.contact-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:18px;
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
 }
-.contact-card{
-  padding:24px;border:1px solid #7133a077;
-  border-radius:18px;background:linear-gradient(130deg,#1a1025,#0c0812);
+
+.contact-card {
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:27px;
+  background:linear-gradient(145deg,#191126,#0e0a17);
 }
-.contact-card p{color:#bdb4c7;font-size:13px;line-height:2}
-.contact-link{
-  display:flex;align-items:center;gap:12px;
-  direction:ltr;padding:12px;margin-top:12px;
-  border:1px solid #59336e;border-radius:12px;
-  color:#e8d6f8;overflow-wrap:anywhere;
+
+.contact-card h3 {
+  margin-top:0;
 }
-.contact-link span{font-size:22px;color:#c36aff}
-.socials{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
-.socials a{
-  padding:9px 14px;border:1px solid #75449a;
-  border-radius:25px;font-size:12px;color:#d5b4f0;
+
+.contact-card p {
+  color:#bdb4ca;
+  font-size:13px;
+  line-height:2.2;
+}
+
+.socials {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:18px;
+}
+
+.socials a {
+  padding:10px 15px;
+  border:1px solid #a855f755;
+  border-radius:25px;
+  font-size:12px;
+  color:#e9d5ff;
+  transition:.2s;
+}
+
+.socials a:hover {
+  background:#9333ea33;
+}
+
+.contact-link {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  direction:ltr;
+  padding:13px;
+  margin-top:12px;
+  border:1px solid var(--border);
+  border-radius:13px;
+  color:#e9d5ff;
+  overflow-wrap:anywhere;
+}
+
+.contact-link span {
+  font-size:21px;
+  color:#c084fc;
 }
 
 /* فوتر */
-footer{
-  border-top:1px solid #7133a077;background:#07040b;
-  padding:23px 0;color:#9c92a7;font-size:11px;
+
+footer {
+  border-top:1px solid var(--border);
+  background:#07050d;
+  padding:25px 0;
+  color:#a69caf;
+  font-size:11px;
 }
-.footer-inner{
-  display:flex;justify-content:space-between;
-  gap:15px;flex-wrap:wrap;align-items:center;
+
+.footer-inner {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
 }
-.slogan{letter-spacing:4px;direction:ltr;color:#d7b2ff}
+
+.slogan {
+  letter-spacing:3px;
+  direction:ltr;
+  color:#d8b4fe;
+}
 
 /* پنل مدیریت */
-.admin-modal{
-  display:none;position:fixed;inset:0;z-index:100;
-  background:#05020bd9;backdrop-filter:blur(12px);
-  padding:15px;overflow:auto;
-}
-.admin-modal.show{display:block}
-.admin-box{
-  width:min(650px,100%);margin:30px auto;
-  background:#120b1d;border:1px solid #a44ce0;
-  border-radius:20px;padding:24px;
-  box-shadow:0 0 50px #8b00ff44;
-}
-.admin-head{
-  display:flex;justify-content:space-between;align-items:center;
-}
-.close-admin{
-  background:#321344;border:1px solid #a44ce0;
-  color:white;border-radius:50%;width:36px;height:36px;
-}
-.admin-box label{
-  display:block;margin:14px 0 6px;
-  color:#d9b4f4;font-size:13px;
-}
-.admin-box input,.admin-box textarea{
-  width:100%;padding:12px;border-radius:10px;
-  border:1px solid #65417e;background:#090610;
-  color:white;outline:none;
-}
-.admin-box textarea{min-height:100px;resize:vertical}
-.admin-action{
-  background:linear-gradient(90deg,#7900d3,#b32aff);
-  color:white;border:0;border-radius:10px;
-  padding:12px 18px;margin-top:15px;
-}
-.admin-note{font-size:11px;color:#a99ab5;line-height:2}
-.admin-item{
-  padding:12px;margin:8px 0;border:1px solid #54336c;
-  border-radius:10px;display:flex;
-  justify-content:space-between;gap:12px;align-items:center;
-}
-.delete-btn{
-  background:#701b39;border:0;color:white;
-  border-radius:8px;padding:7px 10px;
-}
-#adminEditor{display:none}
-#adminMessage{color:#d6a3ff;font-size:12px}
 
-/* تبلت */
-@media(max-width:850px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero-copy{text-align:center}
-  .hero-line{margin:18px auto}
-  .hero p{max-width:650px;margin:auto}
-  .hero-art{min-height:260px}
-  .article{flex-basis:calc((100% - 16px)/2)}
+.admin-modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:#05020bdf;
+  backdrop-filter:blur(12px);
+  padding:15px;
+  overflow:auto;
 }
 
-/* موبایل */
-@media(max-width:600px){
-  .container{width:91%}
-  .top-inner{justify-content:center;padding:8px 0}
-  .top-links{justify-content:center;gap:12px}
-  .top-links a{font-size:10px}
-  .nav{min-height:70px}
-  .brand-name{font-size:22px}
-  .crown{font-size:34px}
-  .menu-toggle{display:block}
-  .navlinks{
-    display:none;width:100%;flex-direction:column;
-    align-items:stretch;padding:8px 0 15px;
+.admin-modal.show {
+  display:block;
+}
+
+.admin-box {
+  width:min(650px,100%);
+  margin:35px auto;
+  padding:27px;
+  border-radius:22px;
+  border:1px solid #a855f788;
+  background:#120c1d;
+  box-shadow:0 0 60px #9333ea44;
+}
+
+.admin-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.admin-head h2 {
+  font-size:19px;
+}
+
+.close-admin {
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  border:1px solid #a855f777;
+  background:#291738;
+  color:white;
+}
+
+.admin-box label {
+  display:block;
+  margin:15px 0 7px;
+  color:#d8b4fe;
+  font-size:13px;
+}
+
+.admin-box input,
+.admin-box textarea {
+  width:100%;
+  padding:13px;
+  border:1px solid #ffffff22;
+  border-radius:12px;
+  background:#090611;
+  color:white;
+  outline:none;
+}
+
+.admin-box input:focus,
+.admin-box textarea:focus {
+  border-color:#c084fc;
+  box-shadow:0 0 0 3px #a855f71c;
+}
+
+.admin-box textarea {
+  min-height:120px;
+  resize:vertical;
+}
+
+.admin-action {
+  display:inline-block;
+  background:linear-gradient(100deg,#7c3aed,#c026d3);
+  color:white;
+  border:0;
+  border-radius:12px;
+  padding:13px 19px;
+  margin-top:15px;
+}
+
+.admin-action:disabled {
+  opacity:.6;
+  cursor:wait;
+}
+
+.admin-note {
+  color:#a99eb7;
+  font-size:12px;
+  line-height:2;
+}
+
+#adminMessage {
+  color:#d8b4fe;
+  font-size:12px;
+  line-height:2;
+}
+
+.admin-item {
+  padding:13px;
+  margin:9px 0;
+  border:1px solid #ffffff20;
+  border-radius:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.admin-item span {
+  flex:1;
+  min-width:100px;
+  overflow-wrap:anywhere;
+}
+
+.admin-item button {
+  border:0;
+  border-radius:8px;
+  padding:8px 12px;
+  color:white;
+  background:#6d28d9;
+}
+
+.admin-item .delete-btn {
+  background:#9f1239;
+}
+
+#adminEditor {
+  display:none;
+}
+
+/* موبایل و تبلت */
+
+@media(max-width:850px) {
+  .hero-grid {
+    grid-template-columns:1fr;
+    gap:15px;
   }
-  .navlinks.open{display:flex}
-  .navlinks button{width:100%;text-align:center}
-  .hero{padding:42px 0 55px;min-height:auto}
-  .hero h1{font-size:clamp(39px,11vw,53px)}
-  .hero p{font-size:13px;line-height:2.2}
-  .hero-art{min-height:230px}
-  .orbit{width:205px}
-  .orbit-center{font-size:34px}
-  .actions{justify-content:center}
-  .btn{padding:11px 17px;font-size:12px}
-  section.content-section{padding:45px 0}
-  .section-title h2{font-size:24px}
-  .panel{padding:20px}
-  .stats{grid-template-columns:1fr}
-  .article{flex-basis:100%;min-height:220px}
-  .contact-grid{grid-template-columns:1fr}
-  .footer-inner{justify-content:center;text-align:center}
-  .slogan{font-size:10px}
-  .admin-box{padding:18px;margin:15px auto}
+
+  .hero-copy {
+    text-align:center;
+  }
+
+  .hero-line {
+    margin:20px auto;
+  }
+
+  .hero p {
+    margin:0 auto;
+  }
+
+  .hero-art {
+    min-height:280px;
+  }
+
+  .article {
+    flex-basis:calc((100% - 16px)/2);
+  }
+}
+
+@media(max-width:600px) {
+  .container {
+    width:91%;
+  }
+
+  .top-inner {
+    justify-content:center;
+    padding:8px 0;
+  }
+
+  .top-links {
+    justify-content:center;
+    gap:12px;
+  }
+
+  .top-links a {
+    font-size:10px;
+  }
+
+  .nav {
+    min-height:70px;
+    flex-wrap:wrap;
+  }
+
+  .brand-name {
+    font-size:21px;
+  }
+
+  .crown {
+    font-size:35px;
+  }
+
+  .menu-toggle {
+    display:block;
+  }
+
+  .navlinks {
+    display:none;
+    width:100%;
+    flex-direction:column;
+    align-items:stretch;
+    padding:5px 0 15px;
+  }
+
+  .navlinks.open {
+    display:flex;
+  }
+
+  .navlinks button {
+    width:100%;
+    text-align:center;
+  }
+
+  .hero {
+    padding:55px 0 65px;
+    min-height:auto;
+  }
+
+  .hero h1 {
+    font-size:clamp(40px,11vw,56px);
+  }
+
+  .hero p {
+    font-size:13px;
+  }
+
+  .hero-art {
+    min-height:230px;
+  }
+
+  .orbit {
+    width:215px;
+  }
+
+  .orbit-center {
+    font-size:39px;
+  }
+
+  .actions {
+    justify-content:center;
+  }
+
+  .btn {
+    padding:12px 17px;
+    font-size:12px;
+  }
+
+  .content-section {
+    padding:52px 0;
+  }
+
+  .section-title h2 {
+    font-size:25px;
+  }
+
+  .panel {
+    padding:22px;
+  }
+
+  .stats {
+    grid-template-columns:1fr;
+  }
+
+  .article {
+    flex-basis:100%;
+    min-height:230px;
+  }
+
+  .contact-grid {
+    grid-template-columns:1fr;
+  }
+
+  .footer-inner {
+    justify-content:center;
+    text-align:center;
+  }
+
+  .slogan {
+    font-size:10px;
+  }
+
+  .admin-box {
+    padding:19px;
+    margin:15px auto;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*:before,*:after {
+    scroll-behavior:auto !important;
+    animation:none !important;
+    transition:none !important;
+  }
 }
 </style>
 </head>
 
 <body>
+
 <div class="glow one"></div>
 <div class="glow two"></div>
 
@@ -373,6 +977,7 @@ footer{
       <a href="https://instagram.com/amirshz021" target="_blank" rel="noopener">◎ amirshz021</a>
       <a href="mailto:phantom11780@gmail.com">✉ phantom11780@gmail.com</a>
     </div>
+
     <div class="langs">
       <button id="faBtn" class="active" onclick="setLang('fa')">FA</button>
       <button id="enBtn" onclick="setLang('en')">EN</button>
@@ -382,6 +987,7 @@ footer{
 
 <header>
   <div class="container nav">
+
     <a class="brand" href="#home">
       <span class="crown">♛</span>
       <span>
@@ -389,7 +995,11 @@ footer{
         <small>INDEPENDENT MEDIA</small>
       </span>
     </a>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="باز کردن منو">☰</button>
+
+    <button class="menu-toggle"
+      onclick="toggleMenu()"
+      aria-label="باز کردن منو">☰</button>
+
     <nav class="navlinks" id="navlinks">
       <button onclick="goTo('home')" data-fa="⌂ خانه" data-en="⌂ Home">⌂ خانه</button>
       <button onclick="goTo('about')" data-fa="♙ درباره من" data-en="♙ About">♙ درباره من</button>
@@ -397,94 +1007,167 @@ footer{
       <button onclick="goTo('contact')" data-fa="✉ ارتباط" data-en="✉ Contact">✉ ارتباط</button>
       <button class="admin-open" onclick="openAdmin()" data-fa="⚙ مدیریت" data-en="⚙ Admin">⚙ مدیریت</button>
     </nav>
+
   </div>
 </header>
 
 <main>
+
+  <!-- صفحه اصلی -->
   <section class="hero" id="home">
     <div class="container hero-grid">
+
       <div class="hero-copy">
-        <div class="kicker" data-fa="رسانه مستقل • صدای متفاوت" data-en="INDEPENDENT MEDIA • A DIFFERENT VOICE">رسانه مستقل • صدای متفاوت</div>
+        <div class="kicker"
+          data-fa="رسانه مستقل • صدای متفاوت"
+          data-en="INDEPENDENT MEDIA • A DIFFERENT VOICE">
+          رسانه مستقل • صدای متفاوت
+        </div>
+
         <h1>AMIR <span>OFFICIAL</span></h1>
+
         <div class="hero-line"></div>
-        <p data-fa="اینجا جایی برای دنبال کردن اخبار سیاسی، تحلیل رویدادها و شنیدن دیدگاه‌های شخصی است. با نگاهی مستقل، پرسشگر و آینده‌نگر."
-           data-en="A place for political news, event analysis and personal perspectives. Independent, curious and forward-looking.">
+
+        <p
+          data-fa="اینجا جایی برای دنبال کردن اخبار سیاسی، تحلیل رویدادها و شنیدن دیدگاه‌های شخصی است. با نگاهی مستقل، پرسشگر و آینده‌نگر."
+          data-en="A place for political news, event analysis and personal perspectives. Independent, curious and forward-looking.">
           اینجا جایی برای دنبال کردن اخبار سیاسی، تحلیل رویدادها و شنیدن دیدگاه‌های شخصی است. با نگاهی مستقل، پرسشگر و آینده‌نگر.
         </p>
+
         <div class="actions">
-          <button class="btn primary" onclick="goTo('media')" data-fa="← ورود به رسانه" data-en="Explore Media →">← ورود به رسانه</button>
-          <button class="btn" onclick="goTo('about')" data-fa="بیشتر بدانید" data-en="Discover More">بیشتر بدانید</button>
+          <button class="btn primary"
+            onclick="goTo('media')"
+            data-fa="← ورود به رسانه"
+            data-en="Explore Media →">
+            ← ورود به رسانه
+          </button>
+
+          <button class="btn"
+            onclick="goTo('about')"
+            data-fa="بیشتر بدانید"
+            data-en="Discover More">
+            بیشتر بدانید
+          </button>
         </div>
       </div>
+
       <div class="hero-art">
         <div class="orbit">
           <div class="orbit-center">AMIR</div>
           <div class="orbit-label">GLOBAL • INDEPENDENT • MEDIA</div>
         </div>
       </div>
+
     </div>
   </section>
 
+  <!-- درباره من -->
   <section class="content-section" id="about">
     <div class="container">
+
       <div class="section-title">
         <small>WHO WE ARE</small>
         <h2 data-fa="درباره AMIR" data-en="About AMIR">درباره AMIR</h2>
-        <p data-fa="یک صدا، هزار پرسش" data-en="One Voice, A Thousand Questions">یک صدا، هزار پرسش</p>
+        <p data-fa="یک صدا، هزار پرسش" data-en="One Voice, A Thousand Questions">
+          یک صدا، هزار پرسش
+        </p>
       </div>
+
       <div class="panel about">
         <div class="about-crown">♛</div>
         <h2>AMIROFFICIAL</h2>
-        <p data-fa="من امیر هستم؛ علاقه‌مند به سیاست، رسانه و بررسی تحولات جهان. هدف این رسانه، به اشتراک گذاشتن تحلیل‌ها، دیدگاه‌ها و محتوای سیاسی با تأکید بر آگاهی، گفت‌وگو و نگاه مستقل است."
-           data-en="I'm Amir, interested in politics, media and world affairs. This platform shares analysis, perspectives and political content with an emphasis on awareness, dialogue and independent thinking.">
+
+        <p
+          data-fa="من امیر هستم؛ علاقه‌مند به سیاست، رسانه و بررسی تحولات جهان. هدف این رسانه، به اشتراک گذاشتن تحلیل‌ها، دیدگاه‌ها و محتوای سیاسی با تأکید بر آگاهی، گفت‌وگو و نگاه مستقل است."
+          data-en="I'm Amir, interested in politics, media and world affairs. This platform shares analysis, perspectives and political content with an emphasis on awareness, dialogue and independent thinking.">
           من امیر هستم؛ علاقه‌مند به سیاست، رسانه و بررسی تحولات جهان. هدف این رسانه، به اشتراک گذاشتن تحلیل‌ها، دیدگاه‌ها و محتوای سیاسی با تأکید بر آگاهی، گفت‌وگو و نگاه مستقل است.
         </p>
+
         <div class="stats">
-          <div class="stat"><strong>01</strong><span data-fa="نگاه مستقل" data-en="Independent View">نگاه مستقل</span></div>
-          <div class="stat"><strong>02</strong><span data-fa="تحلیل سیاسی" data-en="Political Analysis">تحلیل سیاسی</span></div>
-          <div class="stat"><strong>03</strong><span data-fa="گفت‌وگوی آگاهانه" data-en="Informed Dialogue">گفت‌وگوی آگاهانه</span></div>
+          <div class="stat">
+            <strong>01</strong>
+            <span data-fa="نگاه مستقل" data-en="Independent View">نگاه مستقل</span>
+          </div>
+
+          <div class="stat">
+            <strong>02</strong>
+            <span data-fa="تحلیل سیاسی" data-en="Political Analysis">تحلیل سیاسی</span>
+          </div>
+
+          <div class="stat">
+            <strong>03</strong>
+            <span data-fa="گفت‌وگوی آگاهانه" data-en="Informed Dialogue">گفت‌وگوی آگاهانه</span>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
+  <!-- مطالب -->
   <section class="content-section" id="media">
     <div class="container">
+
       <div class="section-title">
         <small>LATEST CONTENT</small>
         <h2 data-fa="آخرین مطالب" data-en="Latest Content">آخرین مطالب</h2>
-        <p data-fa="مطالب و دیدگاه‌های AMIROFFICIAL" data-en="AMIROFFICIAL articles and perspectives">مطالب و دیدگاه‌های AMIROFFICIAL</p>
+        <p
+          data-fa="مطالب و دیدگاه‌های AMIROFFICIAL"
+          data-en="AMIROFFICIAL articles and perspectives">
+          مطالب و دیدگاه‌های AMIROFFICIAL
+        </p>
       </div>
+
       <div class="article-window">
         <div class="article-track" id="articleTrack"></div>
       </div>
+
       <div class="article-controls">
-        <button class="circle-btn" onclick="moveArticles(-1)" aria-label="قبلی">‹</button>
+        <button class="circle-btn"
+          onclick="moveArticles(-1)"
+          aria-label="قبلی">‹</button>
+
         <div class="dots" id="articleDots"></div>
-        <button class="circle-btn" onclick="moveArticles(1)" aria-label="بعدی">›</button>
+
+        <button class="circle-btn"
+          onclick="moveArticles(1)"
+          aria-label="بعدی">›</button>
       </div>
-      <p style="text-align:center;color:#8f849c;font-size:11px;margin-top:20px"
-         data-fa="برای افزودن مطالب جدید از پنل مدیریت استفاده کن."
-         data-en="Use the admin panel to add new articles.">
+
+      <p style="text-align:center;color:#958aa3;font-size:11px;margin-top:22px"
+        data-fa="برای افزودن مطالب جدید از پنل مدیریت استفاده کن."
+        data-en="Use the admin panel to add new articles.">
         برای افزودن مطالب جدید از پنل مدیریت استفاده کن.
       </p>
+
     </div>
   </section>
 
+  <!-- ارتباط -->
   <section class="content-section" id="contact">
     <div class="container">
+
       <div class="section-title">
         <small>LET'S CONNECT</small>
         <h2 data-fa="در ارتباط باشیم" data-en="Let's Connect">در ارتباط باشیم</h2>
-        <p data-fa="صدای تو شنیده می‌شود" data-en="Your voice matters">صدای تو شنیده می‌شود</p>
+        <p data-fa="صدای تو شنیده می‌شود" data-en="Your voice matters">
+          صدای تو شنیده می‌شود
+        </p>
       </div>
+
       <div class="contact-grid">
+
         <div class="contact-card">
-          <h3 data-fa="شبکه‌های اجتماعی" data-en="Social Media">شبکه‌های اجتماعی</h3>
-          <p data-fa="برای دنبال کردن مطالب جدید، در شبکه‌های اجتماعی همراه من باش."
-             data-en="Follow me on social media for new updates.">
+          <h3 data-fa="شبکه‌های اجتماعی" data-en="Social Media">
+            شبکه‌های اجتماعی
+          </h3>
+
+          <p
+            data-fa="برای دنبال کردن مطالب جدید، در شبکه‌های اجتماعی همراه من باش."
+            data-en="Follow me on social media for new updates.">
             برای دنبال کردن مطالب جدید، در شبکه‌های اجتماعی همراه من باش.
           </p>
+
           <div class="socials">
             <a href="https://instagram.com/amirshz021" target="_blank" rel="noopener">◎ Instagram</a>
             <a href="https://t.me/" target="_blank" rel="noopener">➤ Telegram</a>
@@ -492,74 +1175,127 @@ footer{
             <a href="https://x.com/" target="_blank" rel="noopener">𝕏 X</a>
           </div>
         </div>
+
         <div class="contact-card">
-          <h3 data-fa="ارتباط مستقیم" data-en="Direct Contact">ارتباط مستقیم</h3>
-          <a class="contact-link" href="https://instagram.com/amirshz021" target="_blank" rel="noopener"><span>◎</span> @amirshz021</a>
-          <a class="contact-link" href="mailto:phantom11780@gmail.com"><span>✉</span> phantom11780@gmail.com</a>
+          <h3 data-fa="ارتباط مستقیم" data-en="Direct Contact">
+            ارتباط مستقیم
+          </h3>
+
+          <a class="contact-link"
+            href="https://instagram.com/amirshz021"
+            target="_blank" rel="noopener">
+            <span>◎</span> @amirshz021
+          </a>
+
+          <a class="contact-link" href="mailto:phantom11780@gmail.com">
+            <span>✉</span> phantom11780@gmail.com
+          </a>
         </div>
+
       </div>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="container footer-inner">
     <div>© <span id="year"></span> AMIROFFICIAL — All Rights Reserved</div>
     <div class="slogan">THINK • ANALYZE • DISCUSS</div>
-    <div data-fa="قدرت در آگاهی است..." data-en="Knowledge is power...">قدرت در آگاهی است...</div>
+    <div data-fa="قدرت در آگاهی است..." data-en="Knowledge is power...">
+      قدرت در آگاهی است...
+    </div>
   </div>
 </footer>
 
 <!-- پنل مدیریت -->
 <div class="admin-modal" id="adminModal">
+
   <div class="admin-box">
+
     <div class="admin-head">
       <h2>AMIROFFICIAL ADMIN</h2>
       <button class="close-admin" onclick="closeAdmin()">✕</button>
     </div>
 
     <div id="adminLogin">
+
       <div id="setupPassword" style="display:none">
         <h3>ساخت رمز مدیریت</h3>
-        <p class="admin-note">برای اولین ورود، رمز دلخواهت را دو بار وارد کن.</p>
+        <p class="admin-note">ورود مدیر از طریق حساب Supabase انجام می‌شود.</p>
+
         <label for="firstPassword">رمز جدید</label>
-        <input id="firstPassword" type="password" autocomplete="new-password" placeholder="حداقل ۸ کاراکتر">
+        <input id="firstPassword" type="password" autocomplete="new-password">
+
         <label for="repeatPassword">تکرار رمز</label>
-        <input id="repeatPassword" type="password" autocomplete="new-password" placeholder="تکرار رمز">
-        <button class="admin-action" onclick="setupAdminPassword()">ثبت رمز مدیریت</button>
+        <input id="repeatPassword" type="password" autocomplete="new-password">
+
+        <button class="admin-action" onclick="setupAdminPassword()">
+          ثبت رمز مدیریت
+        </button>
       </div>
 
       <div id="normalLogin" style="display:none">
-        <p class="admin-note">رمز مدیریت را وارد کن.</p>
+
+        <p class="admin-note">
+          برای ورود، ایمیل و رمز حساب مدیر Supabase را وارد کن.
+        </p>
+
         <label for="adminPassword">رمز عبور</label>
-        <input id="adminPassword" type="password" autocomplete="current-password" placeholder="رمز عبور">
-        <button class="admin-action" onclick="loginAdmin()">ورود به پنل</button>
+        <input
+          id="adminPassword"
+          type="password"
+          autocomplete="current-password"
+          placeholder="رمز عبور">
+
+        <button class="admin-action" onclick="loginAdmin()">
+          ورود به پنل
+        </button>
+
       </div>
+
       <p id="adminMessage" role="status"></p>
     </div>
 
     <div id="adminEditor">
-      <p class="admin-note">از این قسمت می‌توانی مطلب جدید اضافه یا مطالب قبلی را حذف کنی.</p>
+
+      <p class="admin-note">
+        از این قسمت می‌توانی مطلب جدید اضافه کنی، مطالب قبلی را ویرایش یا حذف کنی.
+      </p>
+
       <label for="newTitle">عنوان مطلب</label>
       <input id="newTitle" maxlength="100" placeholder="عنوان مطلب">
+
       <label for="newCategory">دسته‌بندی</label>
       <input id="newCategory" maxlength="40" placeholder="مثلاً تحلیل سیاسی">
+
       <label for="newDescription">متن مطلب</label>
       <textarea id="newDescription" maxlength="500" placeholder="متن مطلب"></textarea>
+
       <label for="newIcon">نماد مطلب</label>
       <input id="newIcon" maxlength="8" value="✦">
-      <button class="admin-action" onclick="addArticle()">+ افزودن مطلب</button>
+
+      <button class="admin-action" onclick="addArticle()">
+        + افزودن مطلب
+      </button>
+
       <div style="margin-top:25px">
         <h3>مطالب ثبت‌شده</h3>
         <div id="adminArticleList"></div>
       </div>
-      <button class="admin-action" onclick="logoutAdmin()">خروج از پنل</button>
+
+      <button class="admin-action" onclick="logoutAdmin()">
+        خروج از پنل
+      </button>
+
     </div>
+
   </div>
 </div>
-<script 
-  src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"><
-/script>
+
+<!-- کتابخانه Supabase و سپس کد اصلی سایت -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
